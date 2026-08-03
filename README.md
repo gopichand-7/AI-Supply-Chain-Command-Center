@@ -2,17 +2,17 @@
 
 An AI-powered Supply Chain Analytics Dashboard built with **Python**, **Streamlit**, **Plotly**, and **Google Gemini AI**.
 
-The project demonstrates how AI can enhance supply chain decision-making through interactive dashboards, inventory analytics, and executive-level recommendations generated using Google Gemini.
+This project demonstrates how Artificial Intelligence can enhance supply chain decision-making through interactive dashboards, inventory analytics, and executive-level recommendations.
 
-It is being developed incrementally using versioned releases, with each version introducing new analytics and supply chain capabilities while maintaining a stable, production-style development workflow.
+It is being developed as a portfolio project using an incremental versioning approach, where each release introduces a new, fully tested supply chain capability while maintaining a stable and production-style development workflow.
 
 ---
 
-## 🚀 Current Version
+# 🚀 Current Version
 
 **Version:** `v0.1`
 
-### ✅ Implemented Features
+## ✅ Implemented Features
 
 - 📊 Executive Inventory Dashboard
 - 📈 Inventory KPI Cards
@@ -30,14 +30,13 @@ The project is being developed incrementally. Each version introduces a new supp
 
 ## ✅ Completed
 
-- [x] v0.1 — Executive Inventory Dashboard with Google Gemini AI
+- [x] **v0.1** — Executive Inventory Dashboard with Google Gemini AI
 
 ---
 
 ## 🚧 In Progress
 
-- [ ] v0.2 — Advanced Inventory Analytics
-
+- [ ] **v0.2** — Advanced Inventory Analytics
   - Top Critical Inventory
   - Overstock Inventory
   - ABC Inventory Classification
@@ -49,21 +48,14 @@ The project is being developed incrementally. Each version introduces a new supp
 
 ## 📅 Planned
 
-- [ ] v0.3 — Supplier Performance Analytics
-
-- [ ] v0.4 — Procurement Analytics Dashboard
-
-- [ ] v0.5 — Warehouse Operations Dashboard
-
-- [ ] v0.6 — Logistics & Transportation Analytics
-
-- [ ] v0.7 — Demand Forecasting Dashboard
-
-- [ ] v0.8 — AI Supply Chain Copilot
-
-- [ ] v0.9 — Executive Reporting Center
-
-- [ ] v1.0 — Complete AI Supply Chain Command Center
+- [ ] **v0.3** — Supplier Performance Analytics
+- [ ] **v0.4** — Procurement Analytics Dashboard
+- [ ] **v0.5** — Warehouse Operations Dashboard
+- [ ] **v0.6** — Logistics & Transportation Analytics
+- [ ] **v0.7** — Demand Forecasting Dashboard
+- [ ] **v0.8** — Integrated AI Supply Chain Advisor
+- [ ] **v0.9** — Executive Reporting & Insights
+- [ ] **v1.0** — AI Supply Chain Command Center
 
 ---
 
@@ -71,7 +63,7 @@ The project is being developed incrementally. Each version introduces a new supp
 
 ### Programming Language
 
-- Python 3.14
+- Python 3
 
 ### Framework
 
@@ -87,7 +79,7 @@ The project is being developed incrementally. Each version introduces a new supp
 
 ### Artificial Intelligence
 
-- Google Gemini AI (google-genai SDK)
+- Google Gemini AI (`google-genai` SDK)
 
 ### File Generation
 
@@ -111,12 +103,11 @@ The project is being developed incrementally. Each version introduces a new supp
 
 # 📂 Project Structure
 
-```
+```text
 AI-Supply-Chain-Command-Center/
 │
 ├── data/
-│   ├── inventory_data.csv
-│   └── inventory_trend.csv
+│   └── inventory_data.csv
 │
 ├── utils/
 │   ├── calculations.py
@@ -134,7 +125,7 @@ AI-Supply-Chain-Command-Center/
 | File / Folder | Purpose |
 |---------------|---------|
 | `app.py` | Main Streamlit application |
-| `data/` | Inventory datasets used by the dashboard |
+| `data/` | Inventory dataset |
 | `utils/calculations.py` | Inventory calculations and business logic |
 | `utils/ai_inventory_advisor.py` | Google Gemini AI integration |
 | `requirements.txt` | Python dependencies |
@@ -146,19 +137,19 @@ AI-Supply-Chain-Command-Center/
 
 # ⚙️ Installation & Setup
 
-## 1️⃣ Clone the Repository
+## 1. Clone the Repository
 
 ```bash
 git clone https://github.com/gopichand-7/AI-Supply-Chain-Command-Center.git
 ```
 
-## 2️⃣ Navigate to the Project
+## 2. Navigate to the Project
 
 ```bash
 cd AI-Supply-Chain-Command-Center
 ```
 
-## 3️⃣ Create a Virtual Environment
+## 3. Create a Virtual Environment
 
 ### Windows
 
@@ -174,13 +165,13 @@ python3 -m venv venv
 source venv/bin/activate
 ```
 
-## 4️⃣ Install Dependencies
+## 4. Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## 5️⃣ Create a `.env` File
+## 5. Create a `.env` File
 
 Create a file named `.env` in the project root.
 
@@ -188,17 +179,15 @@ Create a file named `.env` in the project root.
 GEMINI_API_KEY=YOUR_GEMINI_API_KEY
 ```
 
-You can generate an API key from **Google AI Studio**.
+Generate your API key from **Google AI Studio**.
 
-## 6️⃣ Run the Application
+## 6. Run the Application
 
 ```bash
 streamlit run app.py
 ```
 
-The application will open automatically in your default web browser.
-
-Default URL:
+Open your browser and navigate to:
 
 ```
 http://localhost:8501
@@ -210,13 +199,12 @@ http://localhost:8501
 
 ## 📊 Executive Inventory Dashboard
 
-Provides an executive-level overview of inventory performance through interactive KPIs and business insights.
+Provides an executive-level overview of inventory performance through interactive KPIs.
 
-### Included Features
+### Dashboard KPIs
 
 - Total Inventory Value
-- Total SKUs
-- Healthy Inventory Percentage
+- Inventory Health
 - Low Stock Items
 - Overstock Items
 
@@ -224,11 +212,10 @@ Provides an executive-level overview of inventory performance through interactiv
 
 ## 📈 Interactive Analytics
 
-Visualize inventory performance using interactive Plotly charts.
+Interactive Plotly visualizations for:
 
 - Category-wise Inventory Distribution
 - Warehouse-wise Inventory Distribution
-- Inventory Trend Visualization
 
 ---
 
@@ -244,7 +231,7 @@ The AI analyzes:
 - Category Performance
 - Warehouse Distribution
 
-The response includes:
+The generated report includes:
 
 - Executive Summary
 - Key Findings
@@ -256,7 +243,7 @@ The response includes:
 
 ## 📋 Inventory Dataset Viewer
 
-Browse the complete inventory dataset directly inside the dashboard with an interactive table for quick analysis.
+Browse the inventory dataset through an interactive Streamlit table for quick analysis.
 
 ---
 
@@ -272,11 +259,11 @@ Future releases will introduce:
 - 🏭 Warehouse Operations Dashboard
 - 🚚 Logistics & Transportation Analytics
 - 📈 Demand Forecasting
-- 🤖 AI Supply Chain Copilot
+- 🤖 Integrated AI Supply Chain Advisor
 - 📄 Automated Executive Reports
 - 📊 Interactive Business Intelligence Dashboards
 
-The final objective (v1.0) is to provide a unified platform that helps supply chain professionals monitor operations, identify risks, optimize inventory, and support data-driven decision-making using Artificial Intelligence.
+The final objective (**v1.0**) is to provide a unified platform that helps supply chain professionals monitor operations, identify risks, optimize inventory, and support data-driven decision-making using Artificial Intelligence.
 
 ---
 
@@ -285,8 +272,6 @@ The final objective (v1.0) is to provide a unified platform that helps supply ch
 **Gopichand Kollapattu**
 
 - GitHub: https://github.com/gopichand-7
-- LinkedIn: *(Add your LinkedIn profile URL here)*
-
 ---
 
 # 📄 License
