@@ -64,3 +64,45 @@ The project is being developed incrementally. Each version introduces a new supp
 - [ ] v0.9 — Executive Reporting Center
 
 - [ ] v1.0 — Complete AI Supply Chain Command Center
+
+---
+
+# 🛠️ Tech Stack
+
+### Programming Language
+
+- Python 3.14
+
+### Framework
+
+- Streamlit
+
+### Data Processing
+
+- Pandas
+
+### Data Visualization
+
+- Plotly
+
+### Artificial Intelligence
+
+- Google Gemini AI (google-genai SDK)
+
+### File Generation
+
+- ReportLab (PDF Reports)
+- OpenPyXL (Excel Export)
+
+### Environment Management
+
+- python-dotenv
+
+### Version Control
+
+- Git
+- GitHub
+
+### Development Environment
+
+- Visual Studio Code
