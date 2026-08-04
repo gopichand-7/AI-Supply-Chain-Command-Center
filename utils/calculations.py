@@ -166,3 +166,56 @@ def get_category_summary(df):
     )
 
     return summary
+# ==========================================================
+# Warehouse Summary
+# ==========================================================
+
+def get_warehouse_summary(df):
+    """
+    Returns warehouse-wise inventory summary.
+    """
+
+    summary = (
+        df.groupby("Warehouse")
+        .agg(
+            Total_SKUs=("SKU", "count"),
+            Inventory_Value_USD=("InventoryValueUSD", "sum"),
+            Average_Days=("DaysOfInventory", "mean"),
+            Healthy_Items=("StockStatus", lambda x: (x == "🟢 Healthy").sum()),
+            Low_Stock_Items=("StockStatus", lambda x: (x == "🔴 Low Stock").sum()),
+            Overstock_Items=("StockStatus", lambda x: (x == "🟡 Overstock").sum()),
+        )
+        .reset_index()
+    )
+
+    summary["Average_Days"] = summary["Average_Days"].round(1)
+
+    summary = summary.sort_values(
+        by="Inventory_Value_USD",
+        ascending=False
+    )
+
+    return summary
+# ==========================================================
+# Supplier Summary Dashboard
+# ==========================================================
+
+def get_supplier_summary(df):
+    """
+    Returns supplier-wise inventory summary.
+    """
+
+    supplier_summary = (
+        df.groupby("Supplier")
+        .agg(
+            Total_SKUs=("SKU", "count"),
+            Inventory_Value_USD=("InventoryValueUSD", "sum"),
+            Average_Days=("DaysOfInventory", "mean"),
+            Healthy_Items=("StockStatus", lambda x: (x == "🟢 Healthy").sum()),
+            Low_Stock_Items=("StockStatus", lambda x: (x == "🔴 Low Stock").sum()),
+            Overstock_Items=("StockStatus", lambda x: (x == "🟡 Overstock").sum()),
+        )
+        .reset_index()
+    )
+
+    return supplier_summary

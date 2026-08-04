@@ -9,6 +9,8 @@ from utils.calculations import (
     get_overstock_inventory,
     get_abc_inventory,
     get_category_summary,
+    get_warehouse_summary,
+    get_supplier_summary,
 )
 from utils.ai_inventory_advisor import generate_inventory_advice
 
@@ -27,7 +29,7 @@ st.set_page_config(
 # -----------------------------------
 
 st.title("📦 AI Supply Chain Command Center")
-st.markdown("### Executive Dashboard (v0.2.4)")
+st.markdown("### Executive Dashboard (v0.2.6)")
 
 # -----------------------------------
 # Load Data
@@ -342,7 +344,160 @@ st.dataframe(
 )
 
 st.divider()
+# -----------------------------------
+# Warehouse Summary
+# -----------------------------------
 
+st.divider()
+
+st.subheader("🏭 Warehouse Summary")
+
+warehouse_summary = get_warehouse_summary(df)
+
+# KPI Cards
+
+col1, col2, col3 = st.columns(3)
+
+with col1:
+    st.metric(
+        "🏭 Warehouses",
+        len(warehouse_summary)
+    )
+
+with col2:
+    st.metric(
+        "💰 Total Warehouse Value",
+        f"${warehouse_summary['Inventory_Value_USD'].sum():,.2f}"
+    )
+
+with col3:
+    st.metric(
+        "📈 Avg. Days of Inventory",
+        f"{warehouse_summary['Average_Days'].mean():.1f}"
+    )
+
+st.divider()
+
+# Charts
+
+col1, col2 = st.columns(2)
+
+with col1:
+
+    fig = px.bar(
+        warehouse_summary,
+        x="Warehouse",
+        y="Inventory_Value_USD",
+        color="Warehouse",
+        text_auto=".2s",
+        title="Inventory Value by Warehouse"
+    )
+
+    st.plotly_chart(
+        fig,
+        use_container_width=True
+    )
+
+with col2:
+
+    fig = px.pie(
+        warehouse_summary,
+        names="Warehouse",
+        values="Inventory_Value_USD",
+        title="Warehouse Inventory Distribution"
+    )
+
+    st.plotly_chart(
+        fig,
+        use_container_width=True
+    )
+
+st.divider()
+
+# Summary Table
+
+st.dataframe(
+    warehouse_summary,
+    use_container_width=True,
+    hide_index=True,
+)
+# -----------------------------------
+# Supplier Performance Dashboard
+# -----------------------------------
+
+st.divider()
+
+st.subheader("🏢 Supplier Performance Dashboard")
+
+supplier_summary = get_supplier_summary(df)
+
+# KPI Cards
+
+col1, col2, col3 = st.columns(3)
+
+with col1:
+    st.metric(
+        "🏢 Total Suppliers",
+        len(supplier_summary)
+    )
+
+with col2:
+    st.metric(
+        "💰 Total Supplier Value",
+        f"${supplier_summary['Inventory_Value_USD'].sum():,.2f}"
+    )
+
+with col3:
+    st.metric(
+        "📈 Avg. Days of Inventory",
+        f"{supplier_summary['Average_Days'].mean():.1f}"
+    )
+
+st.divider()
+
+# Charts
+
+col1, col2 = st.columns(2)
+
+with col1:
+
+    fig = px.bar(
+        supplier_summary,
+        x="Supplier",
+        y="Inventory_Value_USD",
+        color="Supplier",
+        text_auto=".2s",
+        title="Inventory Value by Supplier"
+    )
+
+    st.plotly_chart(
+        fig,
+        use_container_width=True
+    )
+
+with col2:
+
+    fig = px.pie(
+        supplier_summary,
+        names="Supplier",
+        values="Inventory_Value_USD",
+        title="Supplier Inventory Distribution"
+    )
+
+    st.plotly_chart(
+        fig,
+        use_container_width=True
+    )
+
+st.divider()
+
+# Summary Table
+
+st.dataframe(
+    supplier_summary,
+    use_container_width=True,
+    hide_index=True,
+)
 # -----------------------------------
 # Inventory Dataset
 # -----------------------------------
