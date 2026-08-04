@@ -6,6 +6,7 @@ from utils.calculations import (
     add_stock_status,
     calculate_kpis,
     get_top_critical_inventory,
+    get_overstock_inventory,
 )
 from utils.ai_inventory_advisor import generate_inventory_advice
 
@@ -24,7 +25,7 @@ st.set_page_config(
 # -----------------------------------
 
 st.title("📦 AI Supply Chain Command Center")
-st.markdown("### Executive Dashboard (v0.2.1)")
+st.markdown("### Executive Dashboard (v0.2.2)")
 
 # -----------------------------------
 # Load Data
@@ -166,6 +167,26 @@ st.caption(
 
 st.dataframe(
     critical_df,
+    use_container_width=True,
+    hide_index=True,
+)
+
+st.divider()
+
+# -----------------------------------
+# Overstock Inventory
+# -----------------------------------
+
+st.subheader("📦 Overstock Inventory")
+
+st.caption(
+    "Items where Current Stock exceeds the Maximum Stock Level."
+)
+
+overstock_df = get_overstock_inventory(df)
+
+st.dataframe(
+    overstock_df,
     use_container_width=True,
     hide_index=True,
 )

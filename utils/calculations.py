@@ -40,6 +40,7 @@ def calculate_kpis(df):
         "Overstock": overstock,
     }
 
+
 # ==========================================================
 # Top Critical Inventory
 # ==========================================================
@@ -65,6 +66,35 @@ def get_top_critical_inventory(df, top_n=10):
             "CurrentStock",
             "ReorderLevel",
             "DaysOfInventory",
+            "InventoryValueUSD",
+        ]
+    ].head(top_n)
+
+
+# ==========================================================
+# Overstock Inventory
+# ==========================================================
+
+def get_overstock_inventory(df, top_n=10):
+    """
+    Returns the most overstocked inventory items where
+    CurrentStock exceeds MaxStockLevel.
+    """
+
+    overstock = df[df["CurrentStock"] > df["MaxStockLevel"]].copy()
+
+    overstock = overstock.sort_values(
+        by="InventoryValueUSD",
+        ascending=False
+    )
+
+    return overstock[
+        [
+            "SKU",
+            "ItemName",
+            "Category",
+            "CurrentStock",
+            "MaxStockLevel",
             "InventoryValueUSD",
         ]
     ].head(top_n)
