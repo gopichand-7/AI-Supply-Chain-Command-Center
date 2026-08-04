@@ -98,3 +98,37 @@ def get_overstock_inventory(df, top_n=10):
             "InventoryValueUSD",
         ]
     ].head(top_n)
+# ==========================================================
+# ABC Inventory Classification
+# ==========================================================
+
+def get_abc_inventory(df):
+    """
+    Classifies inventory into A, B, and C classes
+    based on cumulative Inventory Value.
+    """
+
+    abc_df = df.sort_values(
+        by="InventoryValueUSD",
+        ascending=False
+    ).copy()
+
+    total_value = abc_df["InventoryValueUSD"].sum()
+
+    abc_df["CumulativeValue"] = abc_df["InventoryValueUSD"].cumsum()
+
+    abc_df["CumulativePct"] = (
+        abc_df["CumulativeValue"] / total_value
+    ) * 100
+
+    def classify(pct):
+        if pct <= 80:
+            return "A"
+        elif pct <= 95:
+            return "B"
+        else:
+            return "C"
+
+    abc_df["ABC_Class"] = abc_df["CumulativePct"].apply(classify)
+
+    return abc_df

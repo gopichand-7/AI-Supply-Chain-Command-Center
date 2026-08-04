@@ -7,6 +7,7 @@ from utils.calculations import (
     calculate_kpis,
     get_top_critical_inventory,
     get_overstock_inventory,
+    get_abc_inventory,
 )
 from utils.ai_inventory_advisor import generate_inventory_advice
 
@@ -25,7 +26,7 @@ st.set_page_config(
 # -----------------------------------
 
 st.title("📦 AI Supply Chain Command Center")
-st.markdown("### Executive Dashboard (v0.2.2)")
+st.markdown("### Executive Dashboard (v0.2.3)")
 
 # -----------------------------------
 # Load Data
@@ -187,6 +188,74 @@ overstock_df = get_overstock_inventory(df)
 
 st.dataframe(
     overstock_df,
+    use_container_width=True,
+    hide_index=True,
+)
+
+st.divider()
+
+# -----------------------------------
+# ABC Inventory Classification
+# -----------------------------------
+
+st.subheader("📊 ABC Inventory Classification (Value-Based)")
+
+abc_df = get_abc_inventory(df)
+
+# KPI Cards
+col1, col2, col3 = st.columns(3)
+
+with col1:
+    st.metric(
+        "🟢 A Items",
+        (abc_df["ABC_Class"] == "A").sum()
+    )
+
+with col2:
+    st.metric(
+        "🟡 B Items",
+        (abc_df["ABC_Class"] == "B").sum()
+    )
+
+with col3:
+    st.metric(
+        "🔴 C Items",
+        (abc_df["ABC_Class"] == "C").sum()
+    )
+
+# Pie Chart
+abc_summary = (
+    abc_df["ABC_Class"]
+    .value_counts()
+    .reset_index()
+)
+
+abc_summary.columns = ["ABC_Class", "Count"]
+
+fig = px.pie(
+    abc_summary,
+    names="ABC_Class",
+    values="Count",
+    title="ABC Inventory Distribution"
+)
+
+st.plotly_chart(
+    fig,
+    use_container_width=True,
+)
+
+# Table
+st.dataframe(
+    abc_df[
+        [
+            "SKU",
+            "ItemName",
+            "Category",
+            "InventoryValueUSD",
+            "CumulativePct",
+            "ABC_Class",
+        ]
+    ],
     use_container_width=True,
     hide_index=True,
 )
