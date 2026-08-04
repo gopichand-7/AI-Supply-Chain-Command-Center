@@ -2,7 +2,11 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-from utils.calculations import add_stock_status, calculate_kpis
+from utils.calculations import (
+    add_stock_status,
+    calculate_kpis,
+    get_top_critical_inventory,
+)
 from utils.ai_inventory_advisor import generate_inventory_advice
 
 # -----------------------------------
@@ -20,7 +24,7 @@ st.set_page_config(
 # -----------------------------------
 
 st.title("📦 AI Supply Chain Command Center")
-st.markdown("### Executive Dashboard (v0.1)")
+st.markdown("### Executive Dashboard (v0.2.1)")
 
 # -----------------------------------
 # Load Data
@@ -149,9 +153,33 @@ if st.button("Generate AI Inventory Analysis"):
 st.divider()
 
 # -----------------------------------
+# Top Critical Inventory
+# -----------------------------------
+
+st.subheader("🚨 Top Critical Inventory")
+
+critical_df = get_top_critical_inventory(df)
+
+st.caption(
+    "Items where Current Stock is below the Reorder Level, sorted by urgency."
+)
+
+st.dataframe(
+    critical_df,
+    use_container_width=True,
+    hide_index=True,
+)
+
+st.divider()
+
+# -----------------------------------
 # Inventory Dataset
 # -----------------------------------
 
 st.subheader("📋 Inventory Dataset")
 
-st.dataframe(df, use_container_width=True)
+st.dataframe(
+    df,
+    use_container_width=True,
+    hide_index=True,
+)

@@ -39,3 +39,32 @@ def calculate_kpis(df):
         "Low Stock": low_stock,
         "Overstock": overstock,
     }
+
+# ==========================================================
+# Top Critical Inventory
+# ==========================================================
+
+def get_top_critical_inventory(df, top_n=10):
+    """
+    Returns the most critical inventory items where
+    CurrentStock is below ReorderLevel.
+    """
+
+    critical = df[df["CurrentStock"] < df["ReorderLevel"]].copy()
+
+    critical = critical.sort_values(
+        by=["DaysOfInventory", "InventoryValueUSD"],
+        ascending=[True, False]
+    )
+
+    return critical[
+        [
+            "SKU",
+            "ItemName",
+            "Category",
+            "CurrentStock",
+            "ReorderLevel",
+            "DaysOfInventory",
+            "InventoryValueUSD",
+        ]
+    ].head(top_n)
