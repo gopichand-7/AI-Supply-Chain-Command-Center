@@ -98,6 +98,8 @@ def get_overstock_inventory(df, top_n=10):
             "InventoryValueUSD",
         ]
     ].head(top_n)
+
+
 # ==========================================================
 # ABC Inventory Classification
 # ==========================================================
@@ -105,7 +107,7 @@ def get_overstock_inventory(df, top_n=10):
 def get_abc_inventory(df):
     """
     Classifies inventory into A, B, and C classes
-    based on cumulative Inventory Value.
+    based on cumulative inventory value.
     """
 
     abc_df = df.sort_values(
@@ -132,3 +134,35 @@ def get_abc_inventory(df):
     abc_df["ABC_Class"] = abc_df["CumulativePct"].apply(classify)
 
     return abc_df
+
+
+# ==========================================================
+# Category Summary
+# ==========================================================
+
+def get_category_summary(df):
+    """
+    Returns category-wise inventory summary.
+    """
+
+    summary = (
+        df.groupby("Category")
+        .agg(
+            Total_SKUs=("SKU", "count"),
+            Inventory_Value_USD=("InventoryValueUSD", "sum"),
+            Average_Days=("DaysOfInventory", "mean"),
+            Healthy_Items=("StockStatus", lambda x: (x == "🟢 Healthy").sum()),
+            Low_Stock_Items=("StockStatus", lambda x: (x == "🔴 Low Stock").sum()),
+            Overstock_Items=("StockStatus", lambda x: (x == "🟡 Overstock").sum()),
+        )
+        .reset_index()
+    )
+
+    summary["Average_Days"] = summary["Average_Days"].round(1)
+
+    summary = summary.sort_values(
+        by="Inventory_Value_USD",
+        ascending=False
+    )
+
+    return summary

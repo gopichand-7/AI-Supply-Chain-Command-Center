@@ -8,6 +8,7 @@ from utils.calculations import (
     get_top_critical_inventory,
     get_overstock_inventory,
     get_abc_inventory,
+    get_category_summary,
 )
 from utils.ai_inventory_advisor import generate_inventory_advice
 
@@ -26,7 +27,7 @@ st.set_page_config(
 # -----------------------------------
 
 st.title("📦 AI Supply Chain Command Center")
-st.markdown("### Executive Dashboard (v0.2.3)")
+st.markdown("### Executive Dashboard (v0.2.4)")
 
 # -----------------------------------
 # Load Data
@@ -103,7 +104,10 @@ with col1:
         title="Inventory Investment by Category"
     )
 
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(
+        fig,
+        use_container_width=True
+    )
 
 with col2:
 
@@ -122,7 +126,10 @@ with col2:
         title="Inventory Value by Warehouse"
     )
 
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(
+        fig,
+        use_container_width=True
+    )
 
 st.divider()
 
@@ -202,7 +209,6 @@ st.subheader("📊 ABC Inventory Classification (Value-Based)")
 
 abc_df = get_abc_inventory(df)
 
-# KPI Cards
 col1, col2, col3 = st.columns(3)
 
 with col1:
@@ -223,7 +229,6 @@ with col3:
         (abc_df["ABC_Class"] == "C").sum()
     )
 
-# Pie Chart
 abc_summary = (
     abc_df["ABC_Class"]
     .value_counts()
@@ -244,7 +249,6 @@ st.plotly_chart(
     use_container_width=True,
 )
 
-# Table
 st.dataframe(
     abc_df[
         [
@@ -256,6 +260,83 @@ st.dataframe(
             "ABC_Class",
         ]
     ],
+    use_container_width=True,
+    hide_index=True,
+)
+
+st.divider()
+# -----------------------------------
+# Category Summary
+# -----------------------------------
+
+st.subheader("📂 Category Summary")
+
+category_summary = get_category_summary(df)
+
+# KPI Cards
+
+col1, col2, col3 = st.columns(3)
+
+with col1:
+    st.metric(
+        "📦 Categories",
+        len(category_summary)
+    )
+
+with col2:
+    st.metric(
+        "💰 Total Category Value",
+        f"${category_summary['Inventory_Value_USD'].sum():,.2f}"
+    )
+
+with col3:
+    st.metric(
+        "📈 Avg. Days of Inventory",
+        f"{category_summary['Average_Days'].mean():.1f}"
+    )
+
+st.divider()
+
+# Charts
+
+col1, col2 = st.columns(2)
+
+with col1:
+
+    fig = px.bar(
+        category_summary,
+        x="Category",
+        y="Inventory_Value_USD",
+        color="Category",
+        text_auto=".2s",
+        title="Inventory Value by Category"
+    )
+
+    st.plotly_chart(
+        fig,
+        use_container_width=True
+    )
+
+with col2:
+
+    fig = px.pie(
+        category_summary,
+        names="Category",
+        values="Inventory_Value_USD",
+        title="Inventory Value Distribution"
+    )
+
+    st.plotly_chart(
+        fig,
+        use_container_width=True
+    )
+
+st.divider()
+
+# Summary Table
+
+st.dataframe(
+    category_summary,
     use_container_width=True,
     hide_index=True,
 )
