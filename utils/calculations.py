@@ -272,3 +272,46 @@ def calculate_procurement_kpis(procurement_df):
         "Average Order Value": average_order_value,
         "Average Lead Time": average_lead_time,
     }
+# ==========================================================
+# Warehouse & Logistics Dashboard
+# ==========================================================
+
+def get_warehouse_logistics_summary(inventory_df, procurement_df):
+    """
+    Returns warehouse-wise logistics summary by combining
+    inventory and procurement data.
+    """
+
+    inventory_summary = (
+        inventory_df.groupby("Warehouse")
+        .agg(
+            Total_SKUs=("SKU", "count"),
+            Inventory_Value_USD=("InventoryValueUSD", "sum"),
+            Average_Days=("DaysOfInventory", "mean"),
+            Healthy_Items=("StockStatus", lambda x: (x == "🟢 Healthy").sum()),
+            Low_Stock_Items=("StockStatus", lambda x: (x == "🔴 Low Stock").sum()),
+            Overstock_Items=("StockStatus", lambda x: (x == "🟡 Overstock").sum()),
+        )
+        .reset_index()
+    )
+
+    procurement_summary = (
+        procurement_df.groupby("Warehouse")
+        .agg(
+            Purchase_Orders=("PO_ID", "count"),
+            Procurement_Spend=("TotalOrderValueUSD", "sum"),
+            Average_Lead_Time=("LeadTimeDays", "mean"),
+        )
+        .reset_index()
+    )
+
+    summary = inventory_summary.merge(
+        procurement_summary,
+        on="Warehouse",
+        how="left"
+    )
+
+    summary["Average_Days"] = summary["Average_Days"].round(1)
+    summary["Average_Lead_Time"] = summary["Average_Lead_Time"].round(1)
+
+    return summary

@@ -13,6 +13,7 @@ from utils.calculations import (
     get_supplier_summary,
     get_supplier_management_summary,
     calculate_procurement_kpis,
+    get_warehouse_logistics_summary,
 )
 from utils.ai_inventory_advisor import generate_inventory_advice
 
@@ -31,7 +32,7 @@ st.set_page_config(
 # -----------------------------------
 
 st.title("📦 AI Supply Chain Command Center")
-st.markdown("### Executive Dashboard (v0.3.0)")
+st.markdown("### Executive Dashboard (v0.5)")
 
 # -----------------------------------
 # Load Data
@@ -47,7 +48,10 @@ try:
     df = add_stock_status(df)
     kpis = calculate_kpis(df)
     procurement_kpis = calculate_procurement_kpis(procurement_df)
-
+    warehouse_logistics = get_warehouse_logistics_summary(
+    df,
+    procurement_df
+)
     st.success("Inventory data loaded successfully!")
 
 except Exception as e:
@@ -679,6 +683,89 @@ st.subheader("📋 Procurement Orders")
 
 st.dataframe(
     procurement_df,
+    use_container_width=True,
+    hide_index=True,
+)
+# -----------------------------------
+# Warehouse & Logistics Dashboard
+# -----------------------------------
+
+st.divider()
+
+st.subheader("🏭 Warehouse & Logistics Dashboard")
+
+# KPI Cards
+
+col1, col2, col3, col4 = st.columns(4)
+
+with col1:
+    st.metric(
+        "🏭 Total Warehouses",
+        len(warehouse_logistics)
+    )
+
+with col2:
+    st.metric(
+        "💰 Inventory Value",
+        f"${warehouse_logistics['Inventory_Value_USD'].sum():,.2f}"
+    )
+
+with col3:
+    st.metric(
+        "🚚 Procurement Spend",
+        f"${warehouse_logistics['Procurement_Spend'].sum():,.2f}"
+    )
+
+with col4:
+    st.metric(
+        "⏱ Avg Lead Time",
+        f"{warehouse_logistics['Average_Lead_Time'].mean():.1f} Days"
+    )
+
+st.divider()
+
+# Charts
+
+col1, col2 = st.columns(2)
+
+with col1:
+
+    fig = px.bar(
+        warehouse_logistics,
+        x="Warehouse",
+        y="Inventory_Value_USD",
+        color="Warehouse",
+        text_auto=".2s",
+        title="Inventory Value by Warehouse"
+    )
+
+    st.plotly_chart(
+        fig,
+        use_container_width=True,
+        key="warehouse_logistics_bar"
+    )
+
+with col2:
+
+    fig = px.pie(
+        warehouse_logistics,
+        names="Warehouse",
+        values="Procurement_Spend",
+        title="Procurement Spend by Warehouse"
+    )
+
+    st.plotly_chart(
+        fig,
+        use_container_width=True,
+        key="warehouse_logistics_pie"
+    )
+
+st.divider()
+
+st.subheader("📋 Warehouse Logistics Summary")
+
+st.dataframe(
+    warehouse_logistics,
     use_container_width=True,
     hide_index=True,
 )
