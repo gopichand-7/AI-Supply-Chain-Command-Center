@@ -315,3 +315,40 @@ def get_warehouse_logistics_summary(inventory_df, procurement_df):
     summary["Average_Lead_Time"] = summary["Average_Lead_Time"].round(1)
 
     return summary
+# ==========================================================
+# Demand Forecasting Dashboard
+# ==========================================================
+
+def get_demand_forecast_summary(df):
+    """
+    Returns demand forecasting summary using the current
+    inventory snapshot. Demand is represented by the
+    existing AvgDailyUsage column.
+    """
+
+    demand_df = (
+        df.groupby("Category")
+        .agg(
+            Total_SKUs=("SKU", "count"),
+            Average_Daily_Demand=("AvgDailyUsage", "mean"),
+            Total_Daily_Demand=("AvgDailyUsage", "sum"),
+            Average_Days_Inventory=("DaysOfInventory", "mean"),
+            Inventory_Value_USD=("InventoryValueUSD", "sum"),
+        )
+        .reset_index()
+    )
+
+    demand_df["Average_Daily_Demand"] = (
+        demand_df["Average_Daily_Demand"].round(1)
+    )
+
+    demand_df["Average_Days_Inventory"] = (
+        demand_df["Average_Days_Inventory"].round(1)
+    )
+
+    demand_df = demand_df.sort_values(
+        by="Total_Daily_Demand",
+        ascending=False
+    )
+
+    return demand_df

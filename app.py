@@ -14,6 +14,7 @@ from utils.calculations import (
     get_supplier_management_summary,
     calculate_procurement_kpis,
     get_warehouse_logistics_summary,
+    get_demand_forecast_summary,
 )
 from utils.ai_inventory_advisor import generate_inventory_advice
 
@@ -32,7 +33,7 @@ st.set_page_config(
 # -----------------------------------
 
 st.title("📦 AI Supply Chain Command Center")
-st.markdown("### Executive Dashboard (v0.5)")
+st.markdown("### Executive Dashboard (v0.6)")
 
 # -----------------------------------
 # Load Data
@@ -52,6 +53,7 @@ try:
     df,
     procurement_df
 )
+    demand_summary = get_demand_forecast_summary(df)
     st.success("Inventory data loaded successfully!")
 
 except Exception as e:
@@ -766,6 +768,89 @@ st.subheader("📋 Warehouse Logistics Summary")
 
 st.dataframe(
     warehouse_logistics,
+    use_container_width=True,
+    hide_index=True,
+)
+# -----------------------------------
+# Demand Forecasting Dashboard
+# -----------------------------------
+
+st.divider()
+
+st.subheader("📈 Demand Forecasting Dashboard")
+
+# KPI Cards
+
+col1, col2, col3, col4 = st.columns(4)
+
+with col1:
+    st.metric(
+        "📦 Categories",
+        len(demand_summary)
+    )
+
+with col2:
+    st.metric(
+        "📈 Total Daily Demand",
+        f"{demand_summary['Total_Daily_Demand'].sum():.1f}"
+    )
+
+with col3:
+    st.metric(
+        "📊 Avg Daily Demand",
+        f"{demand_summary['Average_Daily_Demand'].mean():.1f}"
+    )
+
+with col4:
+    st.metric(
+        "💰 Inventory Value",
+        f"${demand_summary['Inventory_Value_USD'].sum():,.2f}"
+    )
+
+st.divider()
+
+# Charts
+
+col1, col2 = st.columns(2)
+
+with col1:
+
+    fig = px.bar(
+        demand_summary,
+        x="Category",
+        y="Total_Daily_Demand",
+        color="Category",
+        text_auto=".2s",
+        title="Daily Demand by Category"
+    )
+
+    st.plotly_chart(
+        fig,
+        use_container_width=True,
+        key="demand_bar"
+    )
+
+with col2:
+
+    fig = px.pie(
+        demand_summary,
+        names="Category",
+        values="Inventory_Value_USD",
+        title="Inventory Value by Category"
+    )
+
+    st.plotly_chart(
+        fig,
+        use_container_width=True,
+        key="demand_pie"
+    )
+
+st.divider()
+
+st.subheader("📋 Demand Forecast Summary")
+
+st.dataframe(
+    demand_summary,
     use_container_width=True,
     hide_index=True,
 )
