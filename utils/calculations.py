@@ -219,3 +219,27 @@ def get_supplier_summary(df):
     )
 
     return supplier_summary
+# ==========================================================
+# Supplier Management Dashboard
+# ==========================================================
+
+def get_supplier_management_summary(df):
+    """
+    Returns supplier management summary using the available inventory data.
+    """
+
+    supplier_df = (
+        df.groupby("Supplier")
+        .agg(
+            Total_SKUs=("SKU", "count"),
+            Inventory_Value_USD=("InventoryValueUSD", "sum"),
+            Average_Days_Inventory=("DaysOfInventory", "mean"),
+            Healthy_Items=("StockStatus", lambda x: (x == "🟢 Healthy").sum()),
+            Low_Stock_Items=("StockStatus", lambda x: (x == "🔴 Low Stock").sum()),
+            Overstock_Items=("StockStatus", lambda x: (x == "🟡 Overstock").sum()),
+            Last_Restock_Date=("LastRestockDate", "max"),
+        )
+        .reset_index()
+    )
+
+    return supplier_df

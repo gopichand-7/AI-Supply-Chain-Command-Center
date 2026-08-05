@@ -11,6 +11,7 @@ from utils.calculations import (
     get_category_summary,
     get_warehouse_summary,
     get_supplier_summary,
+    get_supplier_management_summary,
 )
 from utils.ai_inventory_advisor import generate_inventory_advice
 
@@ -29,7 +30,7 @@ st.set_page_config(
 # -----------------------------------
 
 st.title("📦 AI Supply Chain Command Center")
-st.markdown("### Executive Dashboard (v0.2.6)")
+st.markdown("### Executive Dashboard (v0.3.0)")
 
 # -----------------------------------
 # Load Data
@@ -495,6 +496,91 @@ st.divider()
 
 st.dataframe(
     supplier_summary,
+    use_container_width=True,
+    hide_index=True,
+)
+# -----------------------------------
+# Supplier Management Dashboard
+# -----------------------------------
+
+st.divider()
+
+st.subheader("🤝 Supplier Management Dashboard")
+
+supplier_mgmt = get_supplier_management_summary(df)
+
+# KPI Cards
+
+col1, col2, col3, col4 = st.columns(4)
+
+with col1:
+    st.metric(
+        "🏢 Total Suppliers",
+        len(supplier_mgmt)
+    )
+
+with col2:
+    st.metric(
+        "📦 Total SKUs",
+        supplier_mgmt["Total_SKUs"].sum()
+    )
+
+with col3:
+    st.metric(
+        "💰 Total Inventory Value",
+        f"${supplier_mgmt['Inventory_Value_USD'].sum():,.2f}"
+    )
+
+with col4:
+    st.metric(
+        "📅 Latest Restock",
+        supplier_mgmt["Last_Restock_Date"].max()
+    )
+
+st.divider()
+
+# Charts
+
+col1, col2 = st.columns(2)
+
+with col1:
+
+    fig = px.bar(
+        supplier_mgmt,
+        x="Supplier",
+        y="Inventory_Value_USD",
+        color="Supplier",
+        text_auto=".2s",
+        title="Inventory Value by Supplier"
+    )
+
+    st.plotly_chart(
+    fig,
+    use_container_width=True,
+    key="supplier_management_bar"
+    )
+
+with col2:
+
+    fig = px.pie(
+        supplier_mgmt,
+        names="Supplier",
+        values="Inventory_Value_USD",
+        title="Supplier Inventory Distribution"
+    )
+
+    st.plotly_chart(
+    fig,
+    use_container_width=True,
+    key="supplier_management_pie"
+    )
+
+st.divider()
+
+# Supplier Management Table
+
+st.dataframe(
+    supplier_mgmt,
     use_container_width=True,
     hide_index=True,
 )
