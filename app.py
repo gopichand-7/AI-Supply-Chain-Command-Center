@@ -12,6 +12,7 @@ from utils.calculations import (
     get_warehouse_summary,
     get_supplier_summary,
     get_supplier_management_summary,
+    calculate_procurement_kpis,
 )
 from utils.ai_inventory_advisor import generate_inventory_advice
 
@@ -39,11 +40,13 @@ st.markdown("### Executive Dashboard (v0.3.0)")
 try:
     df = pd.read_csv("data/inventory_data.csv")
     trend_df = pd.read_csv("data/inventory_trend.csv")
+    procurement_df = pd.read_csv("data/procurement_data.csv")
 
     trend_df["Date"] = pd.to_datetime(trend_df["Date"])
 
     df = add_stock_status(df)
     kpis = calculate_kpis(df)
+    procurement_kpis = calculate_procurement_kpis(procurement_df)
 
     st.success("Inventory data loaded successfully!")
 
@@ -581,6 +584,101 @@ st.divider()
 
 st.dataframe(
     supplier_mgmt,
+    use_container_width=True,
+    hide_index=True,
+)
+# -----------------------------------
+# Procurement Analytics Dashboard
+# -----------------------------------
+
+st.divider()
+
+st.subheader("🛒 Procurement Analytics Dashboard")
+
+# KPI Cards
+
+col1, col2, col3, col4 = st.columns(4)
+
+with col1:
+    st.metric(
+        "📄 Purchase Orders",
+        procurement_kpis["Total Purchase Orders"]
+    )
+
+with col2:
+    st.metric(
+        "💰 Procurement Spend",
+        f"${procurement_kpis['Total Procurement Spend']:,.2f}"
+    )
+
+with col3:
+    st.metric(
+        "📦 Avg Order Value",
+        f"${procurement_kpis['Average Order Value']:,.2f}"
+    )
+
+with col4:
+    st.metric(
+        "🚚 Avg Lead Time",
+        f"{procurement_kpis['Average Lead Time']:.1f} Days"
+    )
+
+st.divider()
+
+# Spend by Supplier
+
+col1, col2 = st.columns(2)
+
+with col1:
+
+    supplier_spend = (
+        procurement_df.groupby("Supplier")["TotalOrderValueUSD"]
+        .sum()
+        .reset_index()
+    )
+
+    fig = px.bar(
+        supplier_spend,
+        x="Supplier",
+        y="TotalOrderValueUSD",
+        color="Supplier",
+        text_auto=".2s",
+        title="Procurement Spend by Supplier"
+    )
+
+    st.plotly_chart(
+        fig,
+        use_container_width=True,
+        key="procurement_supplier_bar"
+    )
+
+with col2:
+
+    category_spend = (
+        procurement_df.groupby("Category")["TotalOrderValueUSD"]
+        .sum()
+        .reset_index()
+    )
+
+    fig = px.pie(
+        category_spend,
+        names="Category",
+        values="TotalOrderValueUSD",
+        title="Procurement Spend by Category"
+    )
+
+    st.plotly_chart(
+        fig,
+        use_container_width=True,
+        key="procurement_category_pie"
+    )
+
+st.divider()
+
+st.subheader("📋 Procurement Orders")
+
+st.dataframe(
+    procurement_df,
     use_container_width=True,
     hide_index=True,
 )

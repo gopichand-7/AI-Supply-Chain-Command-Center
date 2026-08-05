@@ -1,0 +1,201 @@
+PO_ID,OrderDate,ExpectedDelivery,ActualDelivery,SKU,ItemName,Supplier,Category,Warehouse,OrderQuantity,UnitCostUSD,TotalOrderValueUSD,LeadTimeDays,DeliveryDelayDays,OrderStatus,PaymentStatus,Buyer
+PO-0001,29-01-2026,03-02-2026,05-02-2026,SKU-1029,Binder Clips Box,Pinnacle Packaging Group,Office Supplies,Warehouse A - North,300,2.18,654,5,2,Delivered,Paid,Alex Johnson
+PO-0002,19-04-2026,25-04-2026,23-04-2026,SKU-1026,Gearbox Unit,Pinnacle Packaging Group,Spare Parts,Warehouse A - North,145,276.07,40030.15,6,-2,Delivered,Paid,Alex Johnson
+PO-0003,20-02-2026,10-03-2026,11-03-2026,SKU-1025,Filter Cartridge,Summit Electronics Ltd.,Spare Parts,Warehouse A - North,509,84.91,43219.19,18,1,Delivered,Paid,Priya Sharma
+PO-0004,19-04-2026,04-05-2026,06-05-2026,SKU-1031,Industrial Cleaning Solvent,Pinnacle Packaging Group,Chemicals,Warehouse B - Central,209,18.25,3814.25,15,2,Delivered,Pending,Emily Chen
+PO-0005,02-04-2026,18-04-2026,25-04-2026,SKU-1004,Microcontroller Kit,Orion Logistics Supply,Electronics,Warehouse C - South,320,199.36,63795.2,16,7,Delayed,Pending,Emily Chen
+PO-0006,01-02-2026,18-02-2026,17-02-2026,SKU-1025,Filter Cartridge,Summit Electronics Ltd.,Spare Parts,Warehouse C - South,615,84.91,52219.65,17,-1,Delivered,Paid,Rahul Verma
+PO-0007,19-02-2026,26-02-2026,24-02-2026,SKU-1026,Gearbox Unit,Pinnacle Packaging Group,Spare Parts,Warehouse B - Central,727,276.07,200702.89,7,-2,Delivered,Paid,Priya Sharma
+PO-0008,08-04-2026,21-04-2026,26-04-2026,SKU-1004,Microcontroller Kit,Vertex Parts & Tools,Electronics,Warehouse A - North,700,199.36,139552,13,5,Delayed,Pending,Rahul Verma
+PO-0009,23-02-2026,08-03-2026,07-03-2026,SKU-1016,Corrugated Boxes (L),Nova Industrial Supply,Packaging,Warehouse C - South,673,5.18,3486.14,13,-1,Delivered,Paid,Priya Sharma
+PO-0010,08-04-2026,21-04-2026,27-04-2026,SKU-1019,Bubble Cushioning Roll,Vertex Parts & Tools,Packaging,Warehouse A - North,274,28.64,7847.36,13,6,Delayed,Pending,Priya Sharma
+PO-0011,26-07-2026,10-08-2026,14-08-2026,SKU-1002,Power Supply Unit,Atlas Raw Materials,Electronics,Warehouse A - North,324,202.07,65470.68,15,4,In Transit,Pending,Rahul Verma
+PO-0012,17-06-2026,07-07-2026,11-07-2026,SKU-1011,Copper Wire Coil,BlueRiver Chemicals,Raw Materials,Warehouse A - North,955,85.31,81471.05,20,4,Delayed,Pending,Rahul Verma
+PO-0013,05-03-2026,18-03-2026,25-03-2026,SKU-1005,LCD Display Panel,Meridian Components Co.,Electronics,Warehouse B - Central,488,126.62,61790.56,13,7,Delayed,Pending,Priya Sharma
+PO-0014,11-05-2026,31-05-2026,30-05-2026,SKU-1005,LCD Display Panel,Orion Logistics Supply,Electronics,Warehouse A - North,823,126.62,104208.26,20,-1,Delivered,Pending,Priya Sharma
+PO-0015,24-06-2026,12-07-2026,19-07-2026,SKU-1034,Adhesive Resin Drum,Meridian Components Co.,Chemicals,Warehouse B - Central,115,382.25,43958.75,18,7,Delayed,Pending,Emily Chen
+PO-0016,06-03-2026,11-03-2026,10-03-2026,SKU-1024,Motor Coupling,Summit Electronics Ltd.,Spare Parts,Warehouse C - South,748,145.33,108706.84,5,-1,Delivered,Paid,Rahul Verma
+PO-0017,10-02-2026,01-03-2026,27-02-2026,SKU-1018,Pallet Wrap,Summit Electronics Ltd.,Packaging,Warehouse C - South,789,35.22,27788.58,19,-2,Delivered,Paid,Alex Johnson
+PO-0018,18-03-2026,08-04-2026,15-04-2026,SKU-1029,Binder Clips Box,Nova Industrial Supply,Office Supplies,Warehouse B - Central,253,2.18,551.54,21,7,Delayed,Pending,Priya Sharma
+PO-0019,19-07-2026,09-08-2026,07-08-2026,SKU-1025,Filter Cartridge,Vertex Parts & Tools,Spare Parts,Warehouse B - Central,663,84.91,56295.33,21,-2,In Transit,Pending,Alex Johnson
+PO-0020,03-04-2026,17-04-2026,18-04-2026,SKU-1004,Microcontroller Kit,Pinnacle Packaging Group,Electronics,Warehouse C - South,109,199.36,21730.24,14,1,Delivered,Paid,Alex Johnson
+PO-0021,05-05-2026,12-05-2026,18-05-2026,SKU-1032,Lubricant Drum,Nova Industrial Supply,Chemicals,Warehouse A - North,834,129.4,107919.6,7,6,Delayed,Pending,Emily Chen
+PO-0022,12-02-2026,25-02-2026,03-03-2026,SKU-1025,Filter Cartridge,Meridian Components Co.,Spare Parts,Warehouse A - North,943,84.91,80070.13,13,6,Delayed,Pending,Priya Sharma
+PO-0023,21-03-2026,07-04-2026,10-04-2026,SKU-1031,Industrial Cleaning Solvent,BlueRiver Chemicals,Chemicals,Warehouse A - North,498,18.25,9088.5,17,3,Delayed,Pending,Priya Sharma
+PO-0024,17-01-2026,01-02-2026,30-01-2026,SKU-1012,Plastic Resin Pellets,Pinnacle Packaging Group,Raw Materials,Warehouse C - South,652,6.54,4264.08,15,-2,Delivered,Paid,Alex Johnson
+PO-0025,11-06-2026,17-06-2026,18-06-2026,SKU-1031,Industrial Cleaning Solvent,Orion Logistics Supply,Chemicals,Warehouse B - Central,119,18.25,2171.75,6,1,Delivered,Pending,Priya Sharma
+PO-0026,21-06-2026,11-07-2026,12-07-2026,SKU-1013,Rubber Sheet Roll,Nova Industrial Supply,Raw Materials,Warehouse C - South,602,271.48,163430.96,20,1,Delivered,Paid,Emily Chen
+PO-0027,20-07-2026,09-08-2026,13-08-2026,SKU-1012,Plastic Resin Pellets,Atlas Raw Materials,Raw Materials,Warehouse A - North,244,6.54,1595.76,20,4,In Transit,Pending,Emily Chen
+PO-0028,19-04-2026,07-05-2026,12-05-2026,SKU-1016,Corrugated Boxes (L),Orion Logistics Supply,Packaging,Warehouse C - South,934,5.18,4838.12,18,5,Delayed,Pending,Alex Johnson
+PO-0029,14-04-2026,29-04-2026,28-04-2026,SKU-1002,Power Supply Unit,Pinnacle Packaging Group,Electronics,Warehouse A - North,304,202.07,61429.28,15,-1,Delivered,Paid,Priya Sharma
+PO-0030,16-02-2026,01-03-2026,06-03-2026,SKU-1018,Pallet Wrap,Atlas Raw Materials,Packaging,Warehouse B - Central,305,35.22,10742.1,13,5,Delayed,Pending,Alex Johnson
+PO-0031,16-06-2026,21-06-2026,20-06-2026,SKU-1002,Power Supply Unit,Pinnacle Packaging Group,Electronics,Warehouse A - North,998,202.07,201665.86,5,-1,Delivered,Paid,Emily Chen
+PO-0032,13-04-2026,19-04-2026,19-04-2026,SKU-1011,Copper Wire Coil,Orion Logistics Supply,Raw Materials,Warehouse B - Central,438,85.31,37365.78,6,0,Delivered,Paid,Emily Chen
+PO-0033,19-04-2026,09-05-2026,09-05-2026,SKU-1014,Industrial Adhesive Drum,Summit Electronics Ltd.,Raw Materials,Warehouse A - North,244,152.52,37214.88,20,0,Delivered,Paid,Alex Johnson
+PO-0034,22-03-2026,28-03-2026,26-03-2026,SKU-1032,Lubricant Drum,BlueRiver Chemicals,Chemicals,Warehouse C - South,648,129.4,83851.2,6,-2,Delivered,Paid,Priya Sharma
+PO-0035,11-05-2026,18-05-2026,18-05-2026,SKU-1002,Power Supply Unit,Atlas Raw Materials,Electronics,Warehouse C - South,120,202.07,24248.4,7,0,Delivered,Paid,Emily Chen
+PO-0036,26-05-2026,07-06-2026,14-06-2026,SKU-1004,Microcontroller Kit,Orion Logistics Supply,Electronics,Warehouse C - South,658,199.36,131178.88,12,7,Delayed,Pending,Alex Johnson
+PO-0037,18-06-2026,09-07-2026,12-07-2026,SKU-1018,Pallet Wrap,Pinnacle Packaging Group,Packaging,Warehouse C - South,317,35.22,11164.74,21,3,Delayed,Pending,Rahul Verma
+PO-0038,09-03-2026,26-03-2026,26-03-2026,SKU-1012,Plastic Resin Pellets,Summit Electronics Ltd.,Raw Materials,Warehouse B - Central,737,6.54,4819.98,17,0,Delivered,Paid,Alex Johnson
+PO-0039,28-04-2026,06-05-2026,05-05-2026,SKU-1001,Circuit Board Module,Pinnacle Packaging Group,Electronics,Warehouse C - South,600,385.87,231522,8,-1,Delivered,Paid,Rahul Verma
+PO-0040,04-03-2026,20-03-2026,22-03-2026,SKU-1003,Sensor Array,BlueRiver Chemicals,Electronics,Warehouse C - South,211,8.72,1839.92,16,2,Delivered,Paid,Alex Johnson
+PO-0041,29-07-2026,12-08-2026,11-08-2026,SKU-1030,Whiteboard Markers Pack,Nova Industrial Supply,Office Supplies,Warehouse B - Central,949,7.84,7440.16,14,-1,In Transit,Pending,Alex Johnson
+PO-0042,10-07-2026,19-07-2026,21-07-2026,SKU-1004,Microcontroller Kit,Pinnacle Packaging Group,Electronics,Warehouse C - South,338,199.36,67383.68,9,2,Delivered,Paid,Rahul Verma
+PO-0043,06-05-2026,19-05-2026,17-05-2026,SKU-1024,Motor Coupling,Meridian Components Co.,Spare Parts,Warehouse B - Central,144,145.33,20927.52,13,-2,Delivered,Pending,Rahul Verma
+PO-0044,03-02-2026,16-02-2026,16-02-2026,SKU-1033,Coolant Fluid Container,BlueRiver Chemicals,Chemicals,Warehouse C - South,809,24.18,19561.62,13,0,Delivered,Paid,Alex Johnson
+PO-0045,20-01-2026,29-01-2026,04-02-2026,SKU-1004,Microcontroller Kit,Vertex Parts & Tools,Electronics,Warehouse C - South,86,199.36,17144.96,9,6,Delayed,Pending,Priya Sharma
+PO-0046,02-02-2026,08-02-2026,10-02-2026,SKU-1018,Pallet Wrap,Orion Logistics Supply,Packaging,Warehouse B - Central,423,35.22,14898.06,6,2,Delivered,Paid,Priya Sharma
+PO-0047,27-01-2026,12-02-2026,18-02-2026,SKU-1030,Whiteboard Markers Pack,Meridian Components Co.,Office Supplies,Warehouse C - South,955,7.84,7487.2,16,6,Delayed,Pending,Priya Sharma
+PO-0048,11-02-2026,21-02-2026,25-02-2026,SKU-1012,Plastic Resin Pellets,Nova Industrial Supply,Raw Materials,Warehouse C - South,75,6.54,490.5,10,4,Delayed,Pending,Rahul Verma
+PO-0049,16-04-2026,28-04-2026,30-04-2026,SKU-1034,Adhesive Resin Drum,Atlas Raw Materials,Chemicals,Warehouse B - Central,213,382.25,81419.25,12,2,Delivered,Paid,Emily Chen
+PO-0050,21-02-2026,12-03-2026,15-03-2026,SKU-1012,Plastic Resin Pellets,Pinnacle Packaging Group,Raw Materials,Warehouse A - North,362,6.54,2367.48,19,3,Delayed,Pending,Alex Johnson
+PO-0051,19-02-2026,08-03-2026,11-03-2026,SKU-1030,Whiteboard Markers Pack,Atlas Raw Materials,Office Supplies,Warehouse B - Central,335,7.84,2626.4,17,3,Delayed,Pending,Rahul Verma
+PO-0052,11-05-2026,28-05-2026,03-06-2026,SKU-1029,Binder Clips Box,Orion Logistics Supply,Office Supplies,Warehouse A - North,389,2.18,848.02,17,6,Delayed,Pending,Rahul Verma
+PO-0053,29-05-2026,11-06-2026,09-06-2026,SKU-1010,Aluminum Bar Stock,Meridian Components Co.,Raw Materials,Warehouse B - Central,161,173.92,28001.12,13,-2,Delivered,Paid,Rahul Verma
+PO-0054,05-06-2026,26-06-2026,25-06-2026,SKU-1018,Pallet Wrap,Pinnacle Packaging Group,Packaging,Warehouse B - Central,444,35.22,15637.68,21,-1,Delivered,Pending,Emily Chen
+PO-0055,14-05-2026,25-05-2026,28-05-2026,SKU-1001,Circuit Board Module,Atlas Raw Materials,Electronics,Warehouse C - South,491,385.87,189462.17,11,3,Delayed,Pending,Rahul Verma
+PO-0056,22-03-2026,30-03-2026,01-04-2026,SKU-1028,A4 Paper Ream,Summit Electronics Ltd.,Office Supplies,Warehouse C - South,569,6.23,3544.87,8,2,Delivered,Paid,Emily Chen
+PO-0057,17-03-2026,26-03-2026,27-03-2026,SKU-1031,Industrial Cleaning Solvent,Meridian Components Co.,Chemicals,Warehouse C - South,480,18.25,8760,9,1,Delivered,Paid,Priya Sharma
+PO-0058,26-05-2026,09-06-2026,13-06-2026,SKU-1028,A4 Paper Ream,Orion Logistics Supply,Office Supplies,Warehouse B - Central,611,6.23,3806.53,14,4,Delayed,Pending,Rahul Verma
+PO-0059,21-04-2026,06-05-2026,11-05-2026,SKU-1011,Copper Wire Coil,BlueRiver Chemicals,Raw Materials,Warehouse C - South,502,85.31,42825.62,15,5,Delayed,Pending,Priya Sharma
+PO-0060,02-05-2026,12-05-2026,11-05-2026,SKU-1024,Motor Coupling,Vertex Parts & Tools,Spare Parts,Warehouse A - North,340,145.33,49412.2,10,-1,Delivered,Paid,Priya Sharma
+PO-0061,21-03-2026,02-04-2026,03-04-2026,SKU-1030,Whiteboard Markers Pack,Orion Logistics Supply,Office Supplies,Warehouse A - North,200,7.84,1568,12,1,Delivered,Paid,Emily Chen
+PO-0062,16-07-2026,23-07-2026,28-07-2026,SKU-1028,A4 Paper Ream,Pinnacle Packaging Group,Office Supplies,Warehouse C - South,474,6.23,2953.02,7,5,Delayed,Pending,Emily Chen
+PO-0063,13-04-2026,25-04-2026,25-04-2026,SKU-1023,Bearing Assembly,Orion Logistics Supply,Spare Parts,Warehouse A - North,721,61.75,44521.75,12,0,Delivered,Paid,Priya Sharma
+PO-0064,25-07-2026,15-08-2026,20-08-2026,SKU-1010,Aluminum Bar Stock,Pinnacle Packaging Group,Raw Materials,Warehouse A - North,101,173.92,17565.92,21,5,In Transit,Pending,Emily Chen
+PO-0065,25-07-2026,13-08-2026,19-08-2026,SKU-1005,LCD Display Panel,Vertex Parts & Tools,Electronics,Warehouse B - Central,622,126.62,78757.64,19,6,In Transit,Pending,Emily Chen
+PO-0066,25-04-2026,05-05-2026,10-05-2026,SKU-1025,Filter Cartridge,Summit Electronics Ltd.,Spare Parts,Warehouse A - North,510,84.91,43304.1,10,5,Delayed,Pending,Rahul Verma
+PO-0067,19-07-2026,09-08-2026,14-08-2026,SKU-1033,Coolant Fluid Container,Pinnacle Packaging Group,Chemicals,Warehouse B - Central,691,24.18,16708.38,21,5,In Transit,Pending,Emily Chen
+PO-0068,02-07-2026,16-07-2026,17-07-2026,SKU-1003,Sensor Array,Vertex Parts & Tools,Electronics,Warehouse B - Central,328,8.72,2860.16,14,1,Delivered,Paid,Alex Johnson
+PO-0069,08-02-2026,20-02-2026,24-02-2026,SKU-1005,LCD Display Panel,Nova Industrial Supply,Electronics,Warehouse C - South,760,126.62,96231.2,12,4,Delayed,Pending,Priya Sharma
+PO-0070,17-04-2026,05-05-2026,08-05-2026,SKU-1003,Sensor Array,BlueRiver Chemicals,Electronics,Warehouse B - Central,605,8.72,5275.6,18,3,Delayed,Pending,Alex Johnson
+PO-0071,18-04-2026,05-05-2026,12-05-2026,SKU-1011,Copper Wire Coil,Orion Logistics Supply,Raw Materials,Warehouse C - South,762,85.31,65006.22,17,7,Delayed,Pending,Emily Chen
+PO-0072,02-01-2026,18-01-2026,20-01-2026,SKU-1023,Bearing Assembly,Meridian Components Co.,Spare Parts,Warehouse B - Central,821,61.75,50696.75,16,2,Delivered,Paid,Priya Sharma
+PO-0073,26-02-2026,11-03-2026,15-03-2026,SKU-1023,Bearing Assembly,Orion Logistics Supply,Spare Parts,Warehouse B - Central,547,61.75,33777.25,13,4,Delayed,Pending,Rahul Verma
+PO-0074,23-06-2026,10-07-2026,10-07-2026,SKU-1030,Whiteboard Markers Pack,BlueRiver Chemicals,Office Supplies,Warehouse A - North,910,7.84,7134.4,17,0,Delivered,Paid,Alex Johnson
+PO-0075,01-06-2026,06-06-2026,05-06-2026,SKU-1017,Shrink Wrap Roll,Meridian Components Co.,Packaging,Warehouse A - North,708,42.13,29828.04,5,-1,Delivered,Paid,Priya Sharma
+PO-0076,08-03-2026,25-03-2026,28-03-2026,SKU-1002,Power Supply Unit,BlueRiver Chemicals,Electronics,Warehouse B - Central,266,202.07,53750.62,17,3,Delayed,Pending,Rahul Verma
+PO-0077,08-04-2026,21-04-2026,25-04-2026,SKU-1033,Coolant Fluid Container,Atlas Raw Materials,Chemicals,Warehouse B - Central,308,24.18,7447.44,13,4,Delayed,Pending,Alex Johnson
+PO-0078,19-05-2026,25-05-2026,28-05-2026,SKU-1032,Lubricant Drum,Atlas Raw Materials,Chemicals,Warehouse C - South,279,129.4,36102.6,6,3,Delayed,Pending,Alex Johnson
+PO-0079,08-01-2026,20-01-2026,21-01-2026,SKU-1033,Coolant Fluid Container,Orion Logistics Supply,Chemicals,Warehouse C - South,909,24.18,21979.62,12,1,Delivered,Pending,Priya Sharma
+PO-0080,21-06-2026,29-06-2026,06-07-2026,SKU-1023,Bearing Assembly,BlueRiver Chemicals,Spare Parts,Warehouse C - South,273,61.75,16857.75,8,7,Delayed,Pending,Rahul Verma
+PO-0081,05-04-2026,15-04-2026,22-04-2026,SKU-1033,Coolant Fluid Container,Atlas Raw Materials,Chemicals,Warehouse A - North,671,24.18,16224.78,10,7,Delayed,Pending,Rahul Verma
+PO-0082,29-05-2026,03-06-2026,05-06-2026,SKU-1004,Microcontroller Kit,Meridian Components Co.,Electronics,Warehouse B - Central,639,199.36,127391.04,5,2,Delivered,Paid,Priya Sharma
+PO-0083,01-06-2026,13-06-2026,12-06-2026,SKU-1003,Sensor Array,Summit Electronics Ltd.,Electronics,Warehouse C - South,763,8.72,6653.36,12,-1,Delivered,Paid,Alex Johnson
+PO-0084,25-05-2026,31-05-2026,03-06-2026,SKU-1034,Adhesive Resin Drum,Meridian Components Co.,Chemicals,Warehouse C - South,595,382.25,227438.75,6,3,Delayed,Pending,Rahul Verma
+PO-0085,10-05-2026,25-05-2026,23-05-2026,SKU-1003,Sensor Array,Meridian Components Co.,Electronics,Warehouse B - Central,919,8.72,8013.68,15,-2,Delivered,Pending,Rahul Verma
+PO-0086,28-04-2026,07-05-2026,11-05-2026,SKU-1029,Binder Clips Box,Summit Electronics Ltd.,Office Supplies,Warehouse C - South,230,2.18,501.4,9,4,Delayed,Pending,Emily Chen
+PO-0087,22-04-2026,05-05-2026,08-05-2026,SKU-1019,Bubble Cushioning Roll,Pinnacle Packaging Group,Packaging,Warehouse A - North,922,28.64,26406.08,13,3,Delayed,Pending,Rahul Verma
+PO-0088,04-03-2026,23-03-2026,30-03-2026,SKU-1019,Bubble Cushioning Roll,Meridian Components Co.,Packaging,Warehouse B - Central,674,28.64,19303.36,19,7,Delayed,Pending,Alex Johnson
+PO-0089,25-03-2026,04-04-2026,09-04-2026,SKU-1023,Bearing Assembly,Vertex Parts & Tools,Spare Parts,Warehouse B - Central,267,61.75,16487.25,10,5,Delayed,Pending,Rahul Verma
+PO-0090,02-06-2026,15-06-2026,21-06-2026,SKU-1013,Rubber Sheet Roll,Pinnacle Packaging Group,Raw Materials,Warehouse A - North,60,271.48,16288.8,13,6,Delayed,Pending,Priya Sharma
+PO-0091,15-04-2026,05-05-2026,11-05-2026,SKU-1032,Lubricant Drum,Pinnacle Packaging Group,Chemicals,Warehouse C - South,826,129.4,106884.4,20,6,Delayed,Pending,Emily Chen
+PO-0092,02-07-2026,22-07-2026,27-07-2026,SKU-1029,Binder Clips Box,Orion Logistics Supply,Office Supplies,Warehouse A - North,861,2.18,1876.98,20,5,Delayed,Pending,Rahul Verma
+PO-0093,14-04-2026,26-04-2026,28-04-2026,SKU-1012,Plastic Resin Pellets,Vertex Parts & Tools,Raw Materials,Warehouse B - Central,729,6.54,4767.66,12,2,Delivered,Paid,Rahul Verma
+PO-0094,10-07-2026,25-07-2026,28-07-2026,SKU-1018,Pallet Wrap,BlueRiver Chemicals,Packaging,Warehouse B - Central,769,35.22,27084.18,15,3,Delayed,Pending,Rahul Verma
+PO-0095,01-03-2026,09-03-2026,10-03-2026,SKU-1013,Rubber Sheet Roll,Atlas Raw Materials,Raw Materials,Warehouse C - South,373,271.48,101262.04,8,1,Delivered,Paid,Priya Sharma
+PO-0096,25-02-2026,17-03-2026,19-03-2026,SKU-1011,Copper Wire Coil,Summit Electronics Ltd.,Raw Materials,Warehouse A - North,791,85.31,67480.21,20,2,Delivered,Paid,Rahul Verma
+PO-0097,03-04-2026,13-04-2026,15-04-2026,SKU-1012,Plastic Resin Pellets,Nova Industrial Supply,Raw Materials,Warehouse B - Central,64,6.54,418.56,10,2,Delivered,Pending,Alex Johnson
+PO-0098,16-03-2026,25-03-2026,30-03-2026,SKU-1025,Filter Cartridge,Orion Logistics Supply,Spare Parts,Warehouse C - South,155,84.91,13161.05,9,5,Delayed,Pending,Rahul Verma
+PO-0099,03-05-2026,22-05-2026,25-05-2026,SKU-1023,Bearing Assembly,Orion Logistics Supply,Spare Parts,Warehouse B - Central,238,61.75,14696.5,19,3,Delayed,Pending,Emily Chen
+PO-0100,30-07-2026,06-08-2026,10-08-2026,SKU-1004,Microcontroller Kit,Atlas Raw Materials,Electronics,Warehouse C - South,553,199.36,110246.08,7,4,In Transit,Pending,Alex Johnson
+PO-0101,08-02-2026,22-02-2026,21-02-2026,SKU-1005,LCD Display Panel,Atlas Raw Materials,Electronics,Warehouse C - South,304,126.62,38492.48,14,-1,Delivered,Paid,Priya Sharma
+PO-0102,14-05-2026,31-05-2026,05-06-2026,SKU-1033,Coolant Fluid Container,BlueRiver Chemicals,Chemicals,Warehouse B - Central,980,24.18,23696.4,17,5,Delayed,Pending,Emily Chen
+PO-0103,26-05-2026,01-06-2026,08-06-2026,SKU-1014,Industrial Adhesive Drum,Atlas Raw Materials,Raw Materials,Warehouse A - North,807,152.52,123083.64,6,7,Delayed,Pending,Priya Sharma
+PO-0104,19-06-2026,26-06-2026,26-06-2026,SKU-1013,Rubber Sheet Roll,Nova Industrial Supply,Raw Materials,Warehouse C - South,295,271.48,80086.6,7,0,Delivered,Pending,Alex Johnson
+PO-0105,26-04-2026,16-05-2026,18-05-2026,SKU-1018,Pallet Wrap,Pinnacle Packaging Group,Packaging,Warehouse B - Central,83,35.22,2923.26,20,2,Delivered,Paid,Emily Chen
+PO-0106,25-06-2026,07-07-2026,09-07-2026,SKU-1003,Sensor Array,Pinnacle Packaging Group,Electronics,Warehouse B - Central,856,8.72,7464.32,12,2,Delivered,Pending,Priya Sharma
+PO-0107,08-02-2026,21-02-2026,21-02-2026,SKU-1029,Binder Clips Box,Orion Logistics Supply,Office Supplies,Warehouse A - North,123,2.18,268.14,13,0,Delivered,Paid,Rahul Verma
+PO-0108,01-02-2026,20-02-2026,22-02-2026,SKU-1019,Bubble Cushioning Roll,Meridian Components Co.,Packaging,Warehouse B - Central,766,28.64,21938.24,19,2,Delivered,Paid,Emily Chen
+PO-0109,21-01-2026,27-01-2026,31-01-2026,SKU-1019,Bubble Cushioning Roll,Vertex Parts & Tools,Packaging,Warehouse C - South,802,28.64,22969.28,6,4,Delayed,Pending,Rahul Verma
+PO-0110,24-01-2026,05-02-2026,12-02-2026,SKU-1001,Circuit Board Module,Orion Logistics Supply,Electronics,Warehouse C - South,651,385.87,251201.37,12,7,Delayed,Pending,Rahul Verma
+PO-0111,11-01-2026,21-01-2026,26-01-2026,SKU-1026,Gearbox Unit,BlueRiver Chemicals,Spare Parts,Warehouse B - Central,581,276.07,160396.67,10,5,Delayed,Pending,Priya Sharma
+PO-0112,22-04-2026,12-05-2026,11-05-2026,SKU-1026,Gearbox Unit,Vertex Parts & Tools,Spare Parts,Warehouse B - Central,531,276.07,146593.17,20,-1,Delivered,Paid,Alex Johnson
+PO-0113,26-03-2026,13-04-2026,18-04-2026,SKU-1010,Aluminum Bar Stock,Meridian Components Co.,Raw Materials,Warehouse C - South,345,173.92,60002.4,18,5,Delayed,Pending,Alex Johnson
+PO-0114,23-01-2026,07-02-2026,09-02-2026,SKU-1019,Bubble Cushioning Roll,Atlas Raw Materials,Packaging,Warehouse B - Central,381,28.64,10911.84,15,2,Delivered,Paid,Alex Johnson
+PO-0115,19-05-2026,07-06-2026,11-06-2026,SKU-1030,Whiteboard Markers Pack,Pinnacle Packaging Group,Office Supplies,Warehouse C - South,105,7.84,823.2,19,4,Delayed,Pending,Rahul Verma
+PO-0116,13-07-2026,02-08-2026,07-08-2026,SKU-1028,A4 Paper Ream,Orion Logistics Supply,Office Supplies,Warehouse A - North,828,6.23,5158.44,20,5,In Transit,Pending,Rahul Verma
+PO-0117,03-02-2026,17-02-2026,22-02-2026,SKU-1025,Filter Cartridge,BlueRiver Chemicals,Spare Parts,Warehouse A - North,951,84.91,80749.41,14,5,Delayed,Pending,Alex Johnson
+PO-0118,05-06-2026,17-06-2026,17-06-2026,SKU-1029,Binder Clips Box,Orion Logistics Supply,Office Supplies,Warehouse C - South,368,2.18,802.24,12,0,Delivered,Paid,Priya Sharma
+PO-0119,29-04-2026,07-05-2026,07-05-2026,SKU-1004,Microcontroller Kit,Summit Electronics Ltd.,Electronics,Warehouse C - South,560,199.36,111641.6,8,0,Delivered,Paid,Emily Chen
+PO-0120,01-05-2026,13-05-2026,18-05-2026,SKU-1023,Bearing Assembly,Nova Industrial Supply,Spare Parts,Warehouse B - Central,614,61.75,37914.5,12,5,Delayed,Pending,Priya Sharma
+PO-0121,11-05-2026,20-05-2026,19-05-2026,SKU-1028,A4 Paper Ream,Meridian Components Co.,Office Supplies,Warehouse B - Central,332,6.23,2068.36,9,-1,Delivered,Paid,Rahul Verma
+PO-0122,14-03-2026,28-03-2026,04-04-2026,SKU-1001,Circuit Board Module,BlueRiver Chemicals,Electronics,Warehouse A - North,643,385.87,248114.41,14,7,Delayed,Pending,Emily Chen
+PO-0123,04-05-2026,20-05-2026,23-05-2026,SKU-1025,Filter Cartridge,Meridian Components Co.,Spare Parts,Warehouse B - Central,615,84.91,52219.65,16,3,Delayed,Pending,Rahul Verma
+PO-0124,28-06-2026,10-07-2026,17-07-2026,SKU-1011,Copper Wire Coil,Pinnacle Packaging Group,Raw Materials,Warehouse B - Central,442,85.31,37707.02,12,7,Delayed,Pending,Alex Johnson
+PO-0125,10-07-2026,30-07-2026,03-08-2026,SKU-1015,Corrugated Boxes (M),Nova Industrial Supply,Packaging,Warehouse B - Central,445,3.45,1535.25,20,4,Delayed,Pending,Alex Johnson
+PO-0126,09-05-2026,24-05-2026,23-05-2026,SKU-1005,LCD Display Panel,BlueRiver Chemicals,Electronics,Warehouse A - North,945,126.62,119655.9,15,-1,Delivered,Paid,Emily Chen
+PO-0127,04-07-2026,13-07-2026,17-07-2026,SKU-1001,Circuit Board Module,Nova Industrial Supply,Electronics,Warehouse A - North,941,385.87,363103.67,9,4,Delayed,Pending,Emily Chen
+PO-0128,09-03-2026,24-03-2026,31-03-2026,SKU-1034,Adhesive Resin Drum,Meridian Components Co.,Chemicals,Warehouse C - South,759,382.25,290127.75,15,7,Delayed,Pending,Alex Johnson
+PO-0129,22-06-2026,09-07-2026,12-07-2026,SKU-1015,Corrugated Boxes (M),BlueRiver Chemicals,Packaging,Warehouse C - South,691,3.45,2383.95,17,3,Delayed,Pending,Alex Johnson
+PO-0130,18-01-2026,30-01-2026,01-02-2026,SKU-1028,A4 Paper Ream,Atlas Raw Materials,Office Supplies,Warehouse B - Central,282,6.23,1756.86,12,2,Delivered,Paid,Alex Johnson
+PO-0131,12-02-2026,26-02-2026,24-02-2026,SKU-1019,Bubble Cushioning Roll,Vertex Parts & Tools,Packaging,Warehouse A - North,97,28.64,2778.08,14,-2,Delivered,Paid,Rahul Verma
+PO-0132,07-02-2026,19-02-2026,25-02-2026,SKU-1018,Pallet Wrap,Nova Industrial Supply,Packaging,Warehouse A - North,471,35.22,16588.62,12,6,Delayed,Pending,Priya Sharma
+PO-0133,06-06-2026,23-06-2026,30-06-2026,SKU-1003,Sensor Array,Pinnacle Packaging Group,Electronics,Warehouse B - Central,749,8.72,6531.28,17,7,Delayed,Pending,Priya Sharma
+PO-0134,29-04-2026,12-05-2026,17-05-2026,SKU-1012,Plastic Resin Pellets,Orion Logistics Supply,Raw Materials,Warehouse B - Central,311,6.54,2033.94,13,5,Delayed,Pending,Rahul Verma
+PO-0135,20-05-2026,30-05-2026,29-05-2026,SKU-1030,Whiteboard Markers Pack,Vertex Parts & Tools,Office Supplies,Warehouse C - South,502,7.84,3935.68,10,-1,Delivered,Paid,Emily Chen
+PO-0136,06-03-2026,25-03-2026,27-03-2026,SKU-1031,Industrial Cleaning Solvent,Meridian Components Co.,Chemicals,Warehouse B - Central,253,18.25,4617.25,19,2,Delivered,Pending,Emily Chen
+PO-0137,02-04-2026,16-04-2026,18-04-2026,SKU-1026,Gearbox Unit,Meridian Components Co.,Spare Parts,Warehouse B - Central,72,276.07,19877.04,14,2,Delivered,Pending,Alex Johnson
+PO-0138,10-07-2026,30-07-2026,01-08-2026,SKU-1028,A4 Paper Ream,Pinnacle Packaging Group,Office Supplies,Warehouse C - South,844,6.23,5258.12,20,2,Delivered,Paid,Priya Sharma
+PO-0139,18-02-2026,03-03-2026,03-03-2026,SKU-1029,Binder Clips Box,Atlas Raw Materials,Office Supplies,Warehouse C - South,693,2.18,1510.74,13,0,Delivered,Paid,Rahul Verma
+PO-0140,23-04-2026,29-04-2026,06-05-2026,SKU-1034,Adhesive Resin Drum,Nova Industrial Supply,Chemicals,Warehouse A - North,423,382.25,161691.75,6,7,Delayed,Pending,Rahul Verma
+PO-0141,11-07-2026,29-07-2026,29-07-2026,SKU-1015,Corrugated Boxes (M),Nova Industrial Supply,Packaging,Warehouse C - South,255,3.45,879.75,18,0,Delivered,Paid,Rahul Verma
+PO-0142,09-05-2026,22-05-2026,22-05-2026,SKU-1024,Motor Coupling,BlueRiver Chemicals,Spare Parts,Warehouse B - Central,313,145.33,45488.29,13,0,Delivered,Paid,Rahul Verma
+PO-0143,30-01-2026,18-02-2026,17-02-2026,SKU-1034,Adhesive Resin Drum,Pinnacle Packaging Group,Chemicals,Warehouse C - South,194,382.25,74156.5,19,-1,Delivered,Paid,Emily Chen
+PO-0144,23-05-2026,08-06-2026,07-06-2026,SKU-1034,Adhesive Resin Drum,Meridian Components Co.,Chemicals,Warehouse A - North,859,382.25,328352.75,16,-1,Delivered,Paid,Alex Johnson
+PO-0145,05-04-2026,18-04-2026,25-04-2026,SKU-1019,Bubble Cushioning Roll,Vertex Parts & Tools,Packaging,Warehouse A - North,440,28.64,12601.6,13,7,Delayed,Pending,Priya Sharma
+PO-0146,07-01-2026,22-01-2026,29-01-2026,SKU-1023,Bearing Assembly,Atlas Raw Materials,Spare Parts,Warehouse C - South,276,61.75,17043,15,7,Delayed,Pending,Emily Chen
+PO-0147,19-03-2026,06-04-2026,05-04-2026,SKU-1031,Industrial Cleaning Solvent,Orion Logistics Supply,Chemicals,Warehouse A - North,193,18.25,3522.25,18,-1,Delivered,Paid,Emily Chen
+PO-0148,25-01-2026,06-02-2026,12-02-2026,SKU-1004,Microcontroller Kit,Meridian Components Co.,Electronics,Warehouse B - Central,188,199.36,37479.68,12,6,Delayed,Pending,Rahul Verma
+PO-0149,10-07-2026,28-07-2026,04-08-2026,SKU-1030,Whiteboard Markers Pack,Nova Industrial Supply,Office Supplies,Warehouse B - Central,810,7.84,6350.4,18,7,Delayed,Pending,Alex Johnson
+PO-0150,07-06-2026,25-06-2026,27-06-2026,SKU-1023,Bearing Assembly,Vertex Parts & Tools,Spare Parts,Warehouse A - North,83,61.75,5125.25,18,2,Delivered,Paid,Priya Sharma
+PO-0151,26-01-2026,11-02-2026,17-02-2026,SKU-1016,Corrugated Boxes (L),Vertex Parts & Tools,Packaging,Warehouse A - North,973,5.18,5040.14,16,6,Delayed,Pending,Emily Chen
+PO-0152,18-02-2026,26-02-2026,03-03-2026,SKU-1013,Rubber Sheet Roll,Pinnacle Packaging Group,Raw Materials,Warehouse C - South,143,271.48,38821.64,8,5,Delayed,Pending,Alex Johnson
+PO-0153,21-07-2026,05-08-2026,06-08-2026,SKU-1002,Power Supply Unit,Pinnacle Packaging Group,Electronics,Warehouse A - North,178,202.07,35968.46,15,1,In Transit,Pending,Priya Sharma
+PO-0154,25-02-2026,09-03-2026,12-03-2026,SKU-1026,Gearbox Unit,Nova Industrial Supply,Spare Parts,Warehouse C - South,842,276.07,232450.94,12,3,Delayed,Pending,Alex Johnson
+PO-0155,07-02-2026,16-02-2026,22-02-2026,SKU-1013,Rubber Sheet Roll,Nova Industrial Supply,Raw Materials,Warehouse A - North,306,271.48,83072.88,9,6,Delayed,Pending,Alex Johnson
+PO-0156,04-01-2026,20-01-2026,21-01-2026,SKU-1005,LCD Display Panel,Vertex Parts & Tools,Electronics,Warehouse A - North,652,126.62,82556.24,16,1,Delivered,Pending,Alex Johnson
+PO-0157,09-07-2026,27-07-2026,02-08-2026,SKU-1005,LCD Display Panel,Atlas Raw Materials,Electronics,Warehouse B - Central,166,126.62,21018.92,18,6,Delayed,Pending,Emily Chen
+PO-0158,03-04-2026,24-04-2026,01-05-2026,SKU-1033,Coolant Fluid Container,BlueRiver Chemicals,Chemicals,Warehouse C - South,161,24.18,3892.98,21,7,Delayed,Pending,Priya Sharma
+PO-0159,12-01-2026,02-02-2026,04-02-2026,SKU-1028,A4 Paper Ream,Orion Logistics Supply,Office Supplies,Warehouse A - North,519,6.23,3233.37,21,2,Delivered,Paid,Emily Chen
+PO-0160,25-06-2026,03-07-2026,08-07-2026,SKU-1018,Pallet Wrap,BlueRiver Chemicals,Packaging,Warehouse A - North,779,35.22,27436.38,8,5,Delayed,Pending,Alex Johnson
+PO-0161,05-06-2026,14-06-2026,13-06-2026,SKU-1015,Corrugated Boxes (M),Summit Electronics Ltd.,Packaging,Warehouse C - South,179,3.45,617.55,9,-1,Delivered,Paid,Rahul Verma
+PO-0162,02-06-2026,23-06-2026,25-06-2026,SKU-1017,Shrink Wrap Roll,Meridian Components Co.,Packaging,Warehouse A - North,514,42.13,21654.82,21,2,Delivered,Paid,Alex Johnson
+PO-0163,16-06-2026,27-06-2026,01-07-2026,SKU-1029,Binder Clips Box,Pinnacle Packaging Group,Office Supplies,Warehouse B - Central,512,2.18,1116.16,11,4,Delayed,Pending,Rahul Verma
+PO-0164,13-04-2026,01-05-2026,30-04-2026,SKU-1019,Bubble Cushioning Roll,Meridian Components Co.,Packaging,Warehouse B - Central,370,28.64,10596.8,18,-1,Delivered,Paid,Rahul Verma
+PO-0165,25-06-2026,15-07-2026,14-07-2026,SKU-1005,LCD Display Panel,Atlas Raw Materials,Electronics,Warehouse A - North,143,126.62,18106.66,20,-1,Delivered,Paid,Rahul Verma
+PO-0166,03-02-2026,09-02-2026,16-02-2026,SKU-1034,Adhesive Resin Drum,Vertex Parts & Tools,Chemicals,Warehouse C - South,625,382.25,238906.25,6,7,Delayed,Pending,Alex Johnson
+PO-0167,01-04-2026,19-04-2026,17-04-2026,SKU-1018,Pallet Wrap,Summit Electronics Ltd.,Packaging,Warehouse B - Central,344,35.22,12115.68,18,-2,Delivered,Pending,Priya Sharma
+PO-0168,18-06-2026,08-07-2026,09-07-2026,SKU-1005,LCD Display Panel,Atlas Raw Materials,Electronics,Warehouse B - Central,917,126.62,116110.54,20,1,Delivered,Paid,Rahul Verma
+PO-0169,15-07-2026,28-07-2026,04-08-2026,SKU-1004,Microcontroller Kit,Meridian Components Co.,Electronics,Warehouse C - South,281,199.36,56020.16,13,7,Delayed,Pending,Alex Johnson
+PO-0170,18-06-2026,01-07-2026,29-06-2026,SKU-1028,A4 Paper Ream,Summit Electronics Ltd.,Office Supplies,Warehouse C - South,234,6.23,1457.82,13,-2,Delivered,Paid,Rahul Verma
+PO-0171,02-01-2026,12-01-2026,12-01-2026,SKU-1016,Corrugated Boxes (L),Meridian Components Co.,Packaging,Warehouse A - North,629,5.18,3258.22,10,0,Delivered,Pending,Alex Johnson
+PO-0172,11-07-2026,01-08-2026,02-08-2026,SKU-1003,Sensor Array,Meridian Components Co.,Electronics,Warehouse B - Central,435,8.72,3793.2,21,1,Delivered,Paid,Rahul Verma
+PO-0173,04-07-2026,19-07-2026,26-07-2026,SKU-1014,Industrial Adhesive Drum,Atlas Raw Materials,Raw Materials,Warehouse A - North,660,152.52,100663.2,15,7,Delayed,Pending,Priya Sharma
+PO-0174,13-07-2026,19-07-2026,18-07-2026,SKU-1010,Aluminum Bar Stock,BlueRiver Chemicals,Raw Materials,Warehouse C - South,328,173.92,57045.76,6,-1,Delivered,Paid,Emily Chen
+PO-0175,11-03-2026,22-03-2026,28-03-2026,SKU-1018,Pallet Wrap,Vertex Parts & Tools,Packaging,Warehouse B - Central,166,35.22,5846.52,11,6,Delayed,Pending,Alex Johnson
+PO-0176,23-06-2026,13-07-2026,19-07-2026,SKU-1014,Industrial Adhesive Drum,Summit Electronics Ltd.,Raw Materials,Warehouse A - North,733,152.52,111797.16,20,6,Delayed,Pending,Priya Sharma
+PO-0177,03-06-2026,09-06-2026,07-06-2026,SKU-1017,Shrink Wrap Roll,Summit Electronics Ltd.,Packaging,Warehouse A - North,259,42.13,10911.67,6,-2,Delivered,Paid,Rahul Verma
+PO-0178,25-03-2026,02-04-2026,31-03-2026,SKU-1014,Industrial Adhesive Drum,Meridian Components Co.,Raw Materials,Warehouse A - North,559,152.52,85258.68,8,-2,Delivered,Pending,Priya Sharma
+PO-0179,24-05-2026,09-06-2026,08-06-2026,SKU-1024,Motor Coupling,Orion Logistics Supply,Spare Parts,Warehouse B - Central,456,145.33,66270.48,16,-1,Delivered,Pending,Alex Johnson
+PO-0180,28-05-2026,15-06-2026,22-06-2026,SKU-1015,Corrugated Boxes (M),Meridian Components Co.,Packaging,Warehouse B - Central,464,3.45,1600.8,18,7,Delayed,Pending,Alex Johnson
+PO-0181,06-01-2026,21-01-2026,21-01-2026,SKU-1017,Shrink Wrap Roll,BlueRiver Chemicals,Packaging,Warehouse C - South,870,42.13,36653.1,15,0,Delivered,Paid,Alex Johnson
+PO-0182,28-01-2026,09-02-2026,13-02-2026,SKU-1018,Pallet Wrap,Meridian Components Co.,Packaging,Warehouse C - South,653,35.22,22998.66,12,4,Delayed,Pending,Alex Johnson
+PO-0183,21-03-2026,05-04-2026,06-04-2026,SKU-1017,Shrink Wrap Roll,Nova Industrial Supply,Packaging,Warehouse A - North,391,42.13,16472.83,15,1,Delivered,Paid,Alex Johnson
+PO-0184,11-05-2026,22-05-2026,25-05-2026,SKU-1024,Motor Coupling,Nova Industrial Supply,Spare Parts,Warehouse A - North,409,145.33,59439.97,11,3,Delayed,Pending,Alex Johnson
+PO-0185,07-03-2026,18-03-2026,18-03-2026,SKU-1005,LCD Display Panel,Nova Industrial Supply,Electronics,Warehouse C - South,666,126.62,84328.92,11,0,Delivered,Pending,Emily Chen
+PO-0186,13-07-2026,01-08-2026,08-08-2026,SKU-1019,Bubble Cushioning Roll,Vertex Parts & Tools,Packaging,Warehouse C - South,708,28.64,20277.12,19,7,In Transit,Pending,Rahul Verma
+PO-0187,23-04-2026,30-04-2026,05-05-2026,SKU-1005,LCD Display Panel,Summit Electronics Ltd.,Electronics,Warehouse B - Central,502,126.62,63563.24,7,5,Delayed,Pending,Alex Johnson
+PO-0188,10-05-2026,17-05-2026,19-05-2026,SKU-1016,Corrugated Boxes (L),BlueRiver Chemicals,Packaging,Warehouse A - North,522,5.18,2703.96,7,2,Delivered,Pending,Rahul Verma
+PO-0189,15-06-2026,22-06-2026,29-06-2026,SKU-1003,Sensor Array,Meridian Components Co.,Electronics,Warehouse B - Central,658,8.72,5737.76,7,7,Delayed,Pending,Alex Johnson
+PO-0190,27-07-2026,07-08-2026,10-08-2026,SKU-1019,Bubble Cushioning Roll,BlueRiver Chemicals,Packaging,Warehouse C - South,669,28.64,19160.16,11,3,In Transit,Pending,Priya Sharma
+PO-0191,26-04-2026,04-05-2026,07-05-2026,SKU-1002,Power Supply Unit,Atlas Raw Materials,Electronics,Warehouse C - South,781,202.07,157816.67,8,3,Delayed,Pending,Priya Sharma
+PO-0192,05-03-2026,24-03-2026,29-03-2026,SKU-1002,Power Supply Unit,Nova Industrial Supply,Electronics,Warehouse B - Central,586,202.07,118413.02,19,5,Delayed,Pending,Rahul Verma
+PO-0193,10-04-2026,28-04-2026,01-05-2026,SKU-1014,Industrial Adhesive Drum,Orion Logistics Supply,Raw Materials,Warehouse C - South,745,152.52,113627.4,18,3,Delayed,Pending,Rahul Verma
+PO-0194,26-03-2026,03-04-2026,09-04-2026,SKU-1003,Sensor Array,Meridian Components Co.,Electronics,Warehouse B - Central,744,8.72,6487.68,8,6,Delayed,Pending,Rahul Verma
+PO-0195,18-06-2026,27-06-2026,30-06-2026,SKU-1032,Lubricant Drum,Nova Industrial Supply,Chemicals,Warehouse B - Central,133,129.4,17210.2,9,3,Delayed,Pending,Rahul Verma
+PO-0196,28-06-2026,15-07-2026,15-07-2026,SKU-1029,Binder Clips Box,Atlas Raw Materials,Office Supplies,Warehouse B - Central,659,2.18,1436.62,17,0,Delivered,Paid,Rahul Verma
+PO-0197,21-06-2026,12-07-2026,11-07-2026,SKU-1005,LCD Display Panel,Meridian Components Co.,Electronics,Warehouse C - South,711,126.62,90026.82,21,-1,Delivered,Paid,Rahul Verma
+PO-0198,16-02-2026,27-02-2026,02-03-2026,SKU-1014,Industrial Adhesive Drum,BlueRiver Chemicals,Raw Materials,Warehouse A - North,834,152.52,127201.68,11,3,Delayed,Pending,Priya Sharma
+PO-0199,09-02-2026,16-02-2026,18-02-2026,SKU-1005,LCD Display Panel,Atlas Raw Materials,Electronics,Warehouse C - South,914,126.62,115730.68,7,2,Delivered,Paid,Alex Johnson
+PO-0200,28-03-2026,06-04-2026,13-04-2026,SKU-1030,Whiteboard Markers Pack,Nova Industrial Supply,Office Supplies,Warehouse A - North,435,7.84,3410.4,9,7,Delayed,Pending,Priya Sharma

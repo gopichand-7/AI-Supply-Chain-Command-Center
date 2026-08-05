@@ -243,3 +243,32 @@ def get_supplier_management_summary(df):
     )
 
     return supplier_df
+# ==========================================================
+# Procurement KPIs
+# ==========================================================
+
+def calculate_procurement_kpis(procurement_df):
+    """
+    Calculates procurement dashboard KPIs.
+    """
+
+    total_purchase_orders = len(procurement_df)
+
+    total_procurement_spend = procurement_df[
+        "TotalOrderValueUSD"
+    ].sum()
+
+    average_order_value = procurement_df[
+        "TotalOrderValueUSD"
+    ].mean()
+
+    average_lead_time = procurement_df[
+        "LeadTimeDays"
+    ].mean()
+
+    return {
+        "Total Purchase Orders": total_purchase_orders,
+        "Total Procurement Spend": total_procurement_spend,
+        "Average Order Value": average_order_value,
+        "Average Lead Time": average_lead_time,
+    }
