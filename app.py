@@ -21,50 +21,6 @@ from reportlab.platypus import (
     KeepTogether,
 )
 
-# -----------------------------------
-# Display-only table header polish
-# -----------------------------------
-
-DISPLAY_COLUMN_NAMES = {
-    "ItemName": "Item Name",
-    "UnitCostUSD": "Unit Cost (USD)",
-    "CurrentStock": "Current Stock",
-    "SafetyStock": "Safety Stock",
-    "ReorderLevel": "Reorder Level",
-    "MaxStockLevel": "Max Stock Level",
-    "AvgDailyUsage": "Avg. Daily Usage",
-    "DaysOfInventory": "Days of Inventory",
-    "InventoryValueUSD": "Inventory Value (USD)",
-    "Inventory_Value_USD": "Inventory Value (USD)",
-    "DeliveryDelayDays": "Delivery Delay (Days)",
-    "LeadTimeDays": "Lead Time (Days)",
-    "TotalOrderValueUSD": "Total Order Value (USD)",
-    "OrderStatus": "Order Status",
-    "PaymentStatus": "Payment Status",
-    "SupplierName": "Supplier Name",
-    "Last_Restock_Date": "Last Restock Date",
-    "ABC_Class": "ABC Class",
-    "CumulativePct": "Cumulative %",
-    "Total_Daily_Demand": "Total Daily Demand",
-    "Average_Daily_Demand": "Average Daily Demand",
-    "LastRestockDate": "Last Restock Date",
-    "OrderQuantity": "Order Quantity",
-    "PO_ID": "PO ID",
-    "ExpectedDelivery": "Expected Delivery",
-    "ActualDelivery": "Actual Delivery",
-    "OrderDate": "Order Date",
-}
-
-def polish_display_columns(dataframe):
-    renamed_columns = {
-        column: DISPLAY_COLUMN_NAMES.get(
-            column,
-            column.replace("_", " ")
-        )
-        for column in dataframe.columns
-    }
-    return dataframe.rename(columns=renamed_columns)
-
 from utils.calculations import (
     add_stock_status,
     calculate_kpis,
@@ -161,7 +117,7 @@ def create_executive_pdf(report_text, df, procurement_df):
     )
     card_title_style = ParagraphStyle(
         "CardTitle", parent=styles["Normal"], fontName="Helvetica-Bold",
-        fontSize=10, leading=13, textColor=colors.white, alignment=TA_CENTER,
+        fontSize=10, leading=13, textColor=navy, alignment=TA_CENTER,
     )
     card_body_style = ParagraphStyle(
         "CardBody", parent=styles["Normal"], fontName="Helvetica",
@@ -320,12 +276,7 @@ def create_executive_pdf(report_text, df, procurement_df):
     healthy_pct = (healthy_count / total_skus * 100) if total_skus else 0
 
     total_pos = len(procurement_df)
-    delayed_pos = procurement_df[
-        pd.to_numeric(
-            procurement_df["DeliveryDelayDays"],
-            errors="coerce"
-        ).fillna(0) > 0
-    ]
+    delayed_pos = procurement_df[procurement_df["OrderStatus"].astype(str).str.contains("Delay", case=False, na=False)]
     pending_pos = procurement_df[procurement_df["PaymentStatus"].astype(str).str.contains("Pending", case=False, na=False)]
     delayed_pct = (len(delayed_pos) / total_pos * 100) if total_pos else 0
     pending_pct = (len(pending_pos) / total_pos * 100) if total_pos else 0
@@ -833,6 +784,98 @@ with col4:
 st.divider()
 
 # -----------------------------------
+# AI Executive Supply Chain Command Center
+# -----------------------------------
+
+st.subheader("🧠 AI Executive Supply Chain Command Center")
+
+st.write(
+    "Generate an executive-level supply chain report using Google Gemini AI."
+)
+
+# -----------------------------------
+# Initialize Executive Report
+# -----------------------------------
+
+if "executive_report" not in st.session_state:
+    st.session_state.executive_report = None
+
+
+# -----------------------------------
+# Generate Executive Report
+# -----------------------------------
+
+if st.button("Generate Executive AI Report"):
+
+    with st.spinner("Generating executive report..."):
+
+        try:
+
+            st.session_state.executive_report = (
+                generate_executive_supply_chain_summary(
+                    df,
+                    procurement_df,
+                )
+            )
+
+            st.success("Executive report generated successfully.")
+
+        except Exception as e:
+
+            st.error(f"AI Report Failed: {e}")
+
+
+# -----------------------------------
+# Display Executive Report and Download Options
+# -----------------------------------
+
+if st.session_state.executive_report:
+
+    st.markdown(st.session_state.executive_report.replace("$", "\\$"))
+
+    st.markdown("### 📥 Download Report")
+
+    col1, col2 = st.columns(2)
+
+    # -----------------------------------
+    # Markdown Download
+    # -----------------------------------
+
+    with col1:
+
+        st.download_button(
+            label="⬇️ Download Markdown",
+            data=st.session_state.executive_report,
+            file_name="executive_supply_chain_report.md",
+            mime="text/markdown",
+            use_container_width=True,
+        )
+
+
+    # -----------------------------------
+    # Professional PDF Download
+    # -----------------------------------
+
+    with col2:
+
+        pdf_data = create_executive_pdf(
+        st.session_state.executive_report,
+        df,
+        procurement_df,
+)
+
+        st.download_button(
+            label="📄 Download Professional PDF",
+            data=pdf_data,
+            file_name="AI_Executive_Supply_Chain_Report.pdf",
+            mime="application/pdf",
+            use_container_width=True,
+        )
+
+
+st.divider()
+
+# -----------------------------------
 # Inventory Value by Category
 # -----------------------------------
 
@@ -886,34 +929,6 @@ with col2:
 st.divider()
 
 # -----------------------------------
-# AI Inventory Advisor
-# -----------------------------------
-
-st.subheader("🤖 AI Inventory Advisor")
-
-st.write(
-    "Generate executive-level inventory insights and recommendations using Google Gemini AI."
-)
-
-if st.button("Generate AI Inventory Analysis"):
-
-    with st.spinner("Analyzing inventory using Gemini AI..."):
-
-        try:
-
-            advice = generate_inventory_advice(df)
-
-            st.success("AI analysis completed successfully.")
-
-            st.markdown(advice)
-
-        except Exception as e:
-
-            st.error(f"AI Analysis Failed: {e}")
-
-st.divider()
-
-# -----------------------------------
 # Top Critical Inventory
 # -----------------------------------
 
@@ -926,7 +941,7 @@ st.caption(
 )
 
 st.dataframe(
-    polish_display_columns(critical_df),
+    critical_df,
     use_container_width=True,
     hide_index=True,
 )
@@ -946,10 +961,38 @@ st.caption(
 overstock_df = get_overstock_inventory(df)
 
 st.dataframe(
-    polish_display_columns(overstock_df),
+    overstock_df,
     use_container_width=True,
     hide_index=True,
 )
+
+st.divider()
+
+# -----------------------------------
+# AI Inventory Advisor
+# -----------------------------------
+
+st.subheader("🤖 AI Inventory Advisor")
+
+st.write(
+    "Generate executive-level inventory insights and recommendations using Google Gemini AI."
+)
+
+if st.button("Generate AI Inventory Analysis"):
+
+    with st.spinner("Analyzing inventory using Gemini AI..."):
+
+        try:
+
+            advice = generate_inventory_advice(df)
+
+            st.success("AI analysis completed successfully.")
+
+            st.markdown(advice.replace("$", "\\$"))
+
+        except Exception as e:
+
+            st.error(f"AI Analysis Failed: {e}")
 
 st.divider()
 
@@ -1002,18 +1045,16 @@ st.plotly_chart(
 )
 
 st.dataframe(
-    polish_display_columns(
-        abc_df[
-            [
-                "SKU",
-                "ItemName",
-                "Category",
-                "InventoryValueUSD",
-                "CumulativePct",
-                "ABC_Class",
-            ]
+    abc_df[
+        [
+            "SKU",
+            "ItemName",
+            "Category",
+            "InventoryValueUSD",
+            "CumulativePct",
+            "ABC_Class",
         ]
-    ),
+    ],
     use_container_width=True,
     hide_index=True,
 )
@@ -1091,7 +1132,7 @@ st.divider()
 # Summary Table
 
 st.dataframe(
-    polish_display_columns(category_summary),
+    category_summary,
     use_container_width=True,
     hide_index=True,
 )
@@ -1169,7 +1210,7 @@ st.divider()
 # Summary Table
 
 st.dataframe(
-    polish_display_columns(warehouse_summary),
+    warehouse_summary,
     use_container_width=True,
     hide_index=True,
 )
@@ -1247,7 +1288,7 @@ st.divider()
 # Summary Table
 
 st.dataframe(
-    polish_display_columns(supplier_summary),
+    supplier_summary,
     use_container_width=True,
     hide_index=True,
 )
@@ -1329,7 +1370,7 @@ with col2:
 st.divider()
 
 st.dataframe(
-    polish_display_columns(supplier_mgmt),
+    supplier_mgmt,
     use_container_width=True,
     hide_index=True,
 )
@@ -1421,7 +1462,7 @@ st.divider()
 st.subheader("📋 Procurement Orders")
 
 st.dataframe(
-    polish_display_columns(procurement_df),
+    procurement_df,
     use_container_width=True,
     hide_index=True,
 )
@@ -1501,7 +1542,7 @@ st.divider()
 st.subheader("📋 Warehouse Logistics Summary")
 
 st.dataframe(
-    polish_display_columns(warehouse_logistics),
+    warehouse_logistics,
     use_container_width=True,
     hide_index=True,
 )
@@ -1581,102 +1622,10 @@ st.divider()
 st.subheader("📋 Demand Forecast Summary")
 
 st.dataframe(
-    polish_display_columns(demand_summary),
+    demand_summary,
     use_container_width=True,
     hide_index=True,
 )
-
-st.divider()
-
-# -----------------------------------
-# AI Executive Supply Chain Command Center
-# -----------------------------------
-
-st.subheader("🧠 AI Executive Supply Chain Command Center")
-
-st.write(
-    "Generate an executive-level supply chain report using Google Gemini AI."
-)
-
-# -----------------------------------
-# Initialize Executive Report
-# -----------------------------------
-
-if "executive_report" not in st.session_state:
-    st.session_state.executive_report = None
-
-
-# -----------------------------------
-# Generate Executive Report
-# -----------------------------------
-
-if st.button("Generate Executive AI Report"):
-
-    with st.spinner("Generating executive report..."):
-
-        try:
-
-            st.session_state.executive_report = (
-                generate_executive_supply_chain_summary(
-                    df,
-                    procurement_df,
-                )
-            )
-
-            st.success("Executive report generated successfully.")
-
-        except Exception as e:
-
-            st.error(f"AI Report Failed: {e}")
-
-
-# -----------------------------------
-# Display Executive Report and Download Options
-# -----------------------------------
-
-if st.session_state.executive_report:
-
-    st.markdown(st.session_state.executive_report)
-
-    st.markdown("### 📥 Download Report")
-
-    col1, col2 = st.columns(2)
-
-    # -----------------------------------
-    # Markdown Download
-    # -----------------------------------
-
-    with col1:
-
-        st.download_button(
-            label="⬇️ Download Markdown",
-            data=st.session_state.executive_report,
-            file_name="executive_supply_chain_report.md",
-            mime="text/markdown",
-            use_container_width=True,
-        )
-
-
-    # -----------------------------------
-    # Professional PDF Download
-    # -----------------------------------
-
-    with col2:
-
-        pdf_data = create_executive_pdf(
-        st.session_state.executive_report,
-        df,
-        procurement_df,
-)
-
-        st.download_button(
-            label="📄 Download Professional PDF",
-            data=pdf_data,
-            file_name="AI_Executive_Supply_Chain_Report.pdf",
-            mime="application/pdf",
-            use_container_width=True,
-        )
-
 
 st.divider()
 
@@ -1687,7 +1636,7 @@ st.divider()
 st.subheader("📋 Inventory Dataset")
 
 st.dataframe(
-    polish_display_columns(df),
+    df,
     use_container_width=True,
     hide_index=True,
 )
