@@ -26,7 +26,7 @@ https://ai-supply-chain-command-center.streamlit.app
 
 ## 🖼️ Dashboard Preview
 
-![AI Supply Chain Command Center Dashboard](assets/Screenshot_2026-08-13_155221.png)
+![AI Supply Chain Command Center Dashboard](assets/Screenshot%202026-08-13%20155221.png)
 
 ---
 
